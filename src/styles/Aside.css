@@ -1,16 +1,64 @@
-.shown {
-  whidt: 70%;
-  height: 100%;
-  background-color: #fff;
+.aside-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: inherit;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform .3s ease, opacity .2s ease, background 2s ease;
+}
+
+.container-visible {
+  transform: translateX(0);
+  opacity: 1;
+  background: rgba(0,0,0,.3);
 }
 
 .options-aside {
   width: 70%;
-  height: 100%;
-  background-color: red;
+  height: 100vh;
+  background-color: #fff;
+  place-content: start;
+  place-items: center;
+  text-align: center;
+  padding: 1em 0;
+  box-shadow: 4px 6px 6px rgba(0,0,0,.1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.aside-visible {
+  opacity: 1;
+  pointer-events: auto;
+  
+}
+
+.hide-aside-btn {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 10%;
+  top: 20px;
+  border: 0;
+  background: url("../assets/refrescar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .options-list {
   width: 100%;
   height: 100%;
+  margin: 20px 0;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+  list-style: none;
+  color: #2a2a2;
+  font-family: Sans-Serif;
+  font-weight: bolder;
+  font-size: 18px;
+  overflow-y: srcoll;
 }

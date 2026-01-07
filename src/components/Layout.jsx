@@ -8,7 +8,7 @@ const Layout = () => {
   return (
     <>
       <NavBar toggleAside={nav.toggleAside} />
-      <Aside isOpen={nav.isOpen}/>
+      <Aside isOpen={nav.isOpen} toggleAside={nav.toggleAside}/>
     </>  
   );
 }
