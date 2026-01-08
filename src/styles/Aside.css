@@ -1,20 +1,82 @@
+
+
+@keyframes show-options-aside {
+  0%{
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    transform: translateX(-80%);
+    opacity: .2;
+  }
+  40% {
+    transform: translateX(-60%);
+    opacity: .4;
+  }
+  60% {
+    transform: translateX(-40%);
+    opacity: .6;
+  }
+  80% {
+    transform: translateX(-20%);
+    opacity: .8;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-options-aside {
+  0%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(-20%);
+    opacity: .8;
+  }
+  40% {
+    transform: translateX(-40%);
+    opacity: .6;
+  }
+  60% {
+    transform: translateX(-60%);
+    opacity: .4;
+  }
+  80% {
+    transform: translateX(-80%);
+    opacity: .2;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
 .aside-container {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
+  transition: opacity 
+  .5s ease-out, transform .5s ease-out;
+  animation-name: hide-options-aside;
+  animation-duration: 1s;
   background: inherit;
+  transform: scale(0);
   opacity: 0;
-  transform: translateX(-100%);
-  transition: transform .3s ease, opacity .2s ease, background 2s ease;
 }
 
 .container-visible {
-  transform: translateX(0);
+  background: rgba(0,0,0,.5);
+  animation-name: show-options-aside;
+  animation-duration: .2s;
+  transform: scale(1);
   opacity: 1;
-  background: rgba(0,0,0,.3);
 }
+
 
 .options-aside {
   width: 70%;
@@ -27,22 +89,26 @@
   box-shadow: 4px 6px 6px rgba(0,0,0,.1);
   opacity: 0;
   pointer-events: none;
+  transform: translateX(-100%);
+  transition: transform .5s ease-out, opacity .2s ease-out;
+  
 }
 
 .aside-visible {
   opacity: 1;
+  transform: translateX(0);
   pointer-events: auto;
-  
 }
 
+
 .hide-aside-btn {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   position: absolute;
-  left: 10%;
-  top: 20px;
+  left: 20px;
+  top: 30px;
   border: 0;
-  background: url("../assets/refrescar.png");
+  background: url("../assets/previous-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

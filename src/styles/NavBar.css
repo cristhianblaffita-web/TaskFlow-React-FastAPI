@@ -20,6 +20,10 @@
   min-width: 100px;
   width: 100%;
   height: 100%;
+  background: url("../assets/branch-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   place-content: center;
   place-items: center;
   font-family: Trebuchet;
@@ -39,7 +43,7 @@
   width: 50px;
   height: 50px;
   border: 0;
-  background: url("../assets/opciones.png");
+  background: url("../assets/option-menu-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -58,7 +62,7 @@
   width: 40px;
   height: 40px;
   border: 0;
-  background: url("../assets/account-not-active.png");
+  background: url("../assets/not-loged-user.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

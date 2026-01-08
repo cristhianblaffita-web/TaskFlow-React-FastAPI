@@ -5,8 +5,10 @@ const Aside = ({isOpen, toggleAside}) => {
   const options = ["Home", "Login", "Sign up", "About us"];
   return (
     <>
-    <section className={"aside-container " + (isOpen ? "container-visible" : "")}>
-      <aside className={"options-aside " + (isOpen ? "aside-visible" : "")}>
+    <section className={"aside-container " + (isOpen ? "container-visible" :
+    "")}>
+      <aside className={"options-aside " + (isOpen ? "aside-visible" :
+      "aside-hidden")}>
         <button className="hide-aside-btn" type="button" onClick={toggleAside}></button>
         
         <ul className="options-list">
