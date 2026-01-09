@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "../styles/NavBar.css";
-import {useAside} from "../hooks/ToggleAside.js";
+import { useAside } from "../hooks/ToggleAside.js";
 
 const NavBar = ({toggleAside}) => {
   return (

@@ -7,7 +7,7 @@ import Aside from "../components/Aside.jsx"
 const Home = () => {
   return (
     <>
-    <Layout/>
+      <p>Home</p>
     </>
   )
 }

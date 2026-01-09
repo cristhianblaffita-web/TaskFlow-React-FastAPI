@@ -1,8 +1,26 @@
-import React, {useState} from "react";
+import React, {useState} from "react"
+import { Link } from 'react-router-dom'
 import "../styles/Aside.css"
 
 const Aside = ({isOpen, toggleAside}) => {
-  const options = ["Home", "Login", "Sign up", "About us"];
+  const options = [
+    {
+      route: "/",
+      component: "Home"
+    }, 
+    {
+      route: "/login",
+      component: "Login"
+    }, 
+    {
+      route: "/signup",
+      component: "Sign up"
+    },
+    {
+      route: "/about",
+      component: "About us"
+    }
+    ]
   return (
     <>
     <section className={"aside-container " + (isOpen ? "container-visible" :
@@ -13,7 +31,7 @@ const Aside = ({isOpen, toggleAside}) => {
         
         <ul className="options-list">
           {options.map((option, index) => (
-            <li key={index}>{option}</li>
+            <li key={index}><Link className="option" to={option.route}>{option.component}</Link></li>
           ))}
         </ul>
         </aside>
