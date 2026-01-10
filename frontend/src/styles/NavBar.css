@@ -4,7 +4,7 @@
   min-height: 100px;
   height: 100px;
   max-height: 100px;
-  position: absolute;
+  position: sticky;
   top: 0;
   left: 0;
   background-color: #fff;
@@ -20,7 +20,7 @@
   min-width: 100px;
   width: 100%;
   height: 100%;
-  background: url("../assets/branch-logo.png");
+  background: url("../assets/branch-logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

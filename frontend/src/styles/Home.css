@@ -1,3 +1,91 @@
 body {
   background-color: #ddd;
 }
+
+main {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: .5em;
+  gap: 1em;
+  font-family: Sans-Serif;
+  font-size: 16px;
+}
+
+.home-section {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  box-sizing: border-box;
+  width: 90vw;
+  height: auto;
+  padding: 2em;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+  transform: translateX(-100%);
+  transition: transform 2s ease;
+}
+
+.hero-actions {
+  width: 100%;
+  height: 2em;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 1em;
+}
+
+.primary, .secondary {
+  min-width: 100px;
+  width: 100px;
+  height: 2.5em;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bolder;
+}
+
+.primary {
+  background-color: #009ff0;
+  color: #eee;
+}
+
+.problem ul {
+  width: 100%;
+  height: auto;
+  padding: .5em;
+  margin: 0 1em;
+}
+
+.benefit-cards {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5em;
+  padding: .5em;
+  margin: 0 1em;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  
+}
+
+.how-it-works ol {
+  width: 100%;
+  height: auto;
+  padding: 1em;
+  margin: 0 1em;
+}
+.cta .primary {
+  width: 100%;
+}
+
+.show {
+  transform: translateX(0);
+  position: relative;
+  z-index: -1;
+}
