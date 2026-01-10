@@ -1,26 +1,27 @@
 import React, {useState} from "react"
-import { Link } from 'react-router-dom'
+import { NavLink, Link, useLocation } from 'react-router-dom'
 import "../styles/Aside.css"
 
 const Aside = ({isOpen, toggleAside}) => {
   const options = [
     {
-      route: "/",
-      component: "Home"
+      path: "/",
+      label: "Home",
     }, 
     {
-      route: "/login",
-      component: "Login"
+      path: "/login",
+      label: "Login",
     }, 
     {
-      route: "/signup",
-      component: "Sign up"
+      path: "/signup",
+      label: "Sign up",
     },
     {
-      route: "/about",
-      component: "About us"
+      path: "/about",
+      label: "About us",
     }
     ]
+    
   return (
     <>
     <section className={"aside-container " + (isOpen ? "container-visible" :
@@ -31,8 +32,12 @@ const Aside = ({isOpen, toggleAside}) => {
         
         <ul className="options-list">
           {options.map((option, index) => (
-            <li key={index}><Link className="option" to={option.route}>{option.component}</Link></li>
+            <li key={index} className="item">
+              <NavLink className={( { isActive }) => isActive ? "option current-page" :
+              "option"}
+            to={option.path} end={option.path === "/"}>{option.label}</NavLink></li>
           ))}
+          
         </ul>
         </aside>
       </section>  

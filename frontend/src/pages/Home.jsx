@@ -1,13 +1,14 @@
 import React from "react"
 import "../styles/Home.css"
-import Layout from "../components/Layout.jsx"
-import NavBar from "../components/NavBar.jsx"
-import Aside from "../components/Aside.jsx"
+import { useLocation } from "react-router-dom"
 
 const Home = () => {
+  
   return (
     <>
-      <p>Home</p>
+      <section>
+        
+      </section>
     </>
   )
 }
