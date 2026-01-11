@@ -2,8 +2,12 @@
   /* Colors */
   --primary-color: #009ff0;
   --secondary-color: #fa00fa;
+  --light-color: #9a9a9a;
   --primary-gradient: linear-gradient(45deg, var(--primary-color),
   var(--secondary-color));
+  --section-color: #ffffffef;
+  
+  --primary-font-color: #222;
   
   /* Shading */
   --card-shadow: 0 0 8px rgba(0,0,0,.1);

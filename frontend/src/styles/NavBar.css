@@ -61,8 +61,8 @@
 }
 
 .user-btn {
-  width: calc(var(--nav-icon) + 1em);
-  height: calc(var(--nav-icon) + 1em);
+  width: calc(var(--nav-icon) + .5em);
+  height: calc(var(--nav-icon) + .5em);
   border: 0;
   background: url("../assets/not-loged-user.png");
   background-size: contain;
