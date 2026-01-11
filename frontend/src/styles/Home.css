@@ -5,9 +5,12 @@ body {
 main {
   width: 100vw;
   height: 100%;
+  overflow-y: scroll;
   display: flex;
   flex-flow: column nowrap;
-  padding: .5em;
+  place-content: start;
+  place-items: center;
+  padding: 1em;
   gap: 1em;
   font-family: Sans-Serif;
   font-size: 16px;
@@ -16,9 +19,9 @@ main {
 .home-section {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 8px rgba(0,0,0,.1);
+  box-shadow: var(--card-shadow);
   box-sizing: border-box;
-  width: 90vw;
+  width: 100%;
   height: auto;
   padding: 2em;
   display: flex;
@@ -47,7 +50,7 @@ main {
 }
 
 .primary {
-  background-color: #009ff0;
+  background: var(--primary-gradient);
   color: #eee;
 }
 

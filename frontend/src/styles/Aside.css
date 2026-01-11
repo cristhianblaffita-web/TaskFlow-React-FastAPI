@@ -100,8 +100,8 @@
 
 
 .hide-aside-btn {
-  width: 35px;
-  height: 35px;
+  width: var(--nav-icon);
+  height: var(--nav-icon);
   position: absolute;
   left: 20px;
   top: 30px;
@@ -155,7 +155,7 @@
 }
 
 .item:hover:before{
-  background-color: #009ff0;
+  background-color: var(--primary-color);
   height: 2em;
   top: 0;
 }
@@ -169,14 +169,10 @@
 }
 
 .item .current-page {
-  color: #2a2a2a;
+  color: #fff;
 }
 
-.option .current-page{
-  color: #2a2a2a;
-  background: rgba(0,0,0,.1);
-  border: 1px solid;
-}
+
 
 .current-page:after {
   content: "";
@@ -186,7 +182,7 @@
   border-radius: 50%;
   width: 6px;
   height: 6px;
-  background-color: #2a2a2a;
+  background-color: #fff;
 }
 
 .current-page:before {
@@ -194,8 +190,10 @@
   position: absolute;
   left: 0;
   top: 0;
-  background-color: rgba(0,0,0,.2);
+  background: var(--primary-gradient);
+  opacity: .5;
   width: 100%;
   height: 2em;
   border-radius: 5px;
+  z-index: -1;
 }
