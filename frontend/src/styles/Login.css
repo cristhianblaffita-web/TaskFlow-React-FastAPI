@@ -2,3 +2,78 @@ main {
   width: 100vw;
   height: 100%;
 }
+
+.main-login {
+  place-content: center;
+  place-items: center;
+}
+
+.login-form {
+  width: 90%;
+  height: 400px;
+  padding: 2em;
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: center;
+  place-items: center;
+  gap: 1em;
+  background: var(--section-color);
+  z-index: 0;
+}
+
+.form-header {
+  width: 100%;
+  height: 50px;
+  margin: 10px 0;
+  font-size: 18px;
+  place-content: center;
+  place-items: center;
+}
+
+.form-header h2 {
+  color: var(--primary-color);
+  z-index: inherit;
+}
+
+.field {
+  position: relative;
+  border: 0;
+  width: 100%;
+  height: 2.5em;
+  display: flex;
+  flex-flow: column nowrap;
+  z-index: inherit;
+}
+
+.label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  padding: .1em;
+  color: var(--primary-font-color);
+  background: var(--section-color);
+  font-weight: bold;
+}
+
+.form-input {
+  height: 2.5em;
+  width: 100%;
+  border: 2px solid var(--light-color);
+  border-radius: 5px;
+  padding-left: 10px;
+}
+
+.form-input:hover, .form-input:focus {
+  outline-color: var(--primary-color);
+}
+
+
+.button-field {
+  margin: 1em 0;
+  width: 100%;
+}
+
+.login-btn {
+  width: 100%;
+  height: 3em;
+}
