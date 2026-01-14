@@ -10,7 +10,7 @@
   --primary-font-color: #222;
   
   /* Shading */
-  --card-shadow: 0 0 8px rgba(0,0,0,.1);
+  --main-shadow: 0 0 8px rgba(0,0,0,.2);
   
   /* Sizes */
   --nav-icon: 30px;

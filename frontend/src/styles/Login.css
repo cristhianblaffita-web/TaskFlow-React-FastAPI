@@ -1,16 +1,14 @@
-main {
-  width: 100vw;
-  height: 100%;
-}
 
 .main-login {
+  width: 100vw;
+  height: 100vh;
   place-content: center;
   place-items: center;
 }
 
 .login-form {
-  width: 90%;
-  height: 400px;
+  width: 95%;
+  height: auto;
   padding: 2em;
   display: flex;
   flex-flow: column nowrap;
@@ -24,7 +22,7 @@ main {
 .form-header {
   width: 100%;
   height: 50px;
-  margin: 10px 0;
+  /*margin: 10px 0;*/
   font-size: 18px;
   place-content: center;
   place-items: center;
@@ -70,12 +68,31 @@ main {
 
 
 .button-field {
-  margin: 1em 0;
+  margin: .5em 0;
   width: 100%;
   max-width: 350px;
 }
 
 .login-btn {
   width: 100%;
-  height: 3.5em;
+  height: 3em;
+  font-size: 16px;
+}
+
+.other-options {
+  width: 100%;
+  height: 2em;
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: center;
+  place-items: center;
+  gap: .5em;
+}
+
+.login-form p {
+  font-weight: bold;
+}
+
+.form-link {
+  text-decoration: none;
 }

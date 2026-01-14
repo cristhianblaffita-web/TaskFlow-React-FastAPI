@@ -54,6 +54,7 @@ main {
   border-radius: 5px;
   font-weight: bolder;
   cursor: pointer;
+  transition: box-shadow 2s ease, transform .5s ease;
 }
 
 .primary {
@@ -67,9 +68,9 @@ main {
   border: 2px solid var(--light-color);
 }
 
-.secondary:hover {
-  background: var(--light-color);
-  color: #eee;
+.primary:hover, .secondary:hover {
+  box-shadow: var(--main-shadow);
+  transform: scale(1.05);
 }
 
 .problem ul {
