@@ -2,6 +2,7 @@ import React from "react"
 import "../styles/Login.css"
 import InputPassword from "../components/InputPassword.jsx"
 import { Link } from "react-router-dom"
+import { SecurityLevel } from "../hooks/PasswordHint.jsx"
 
 const Login = () => {
   return (
@@ -14,7 +15,7 @@ const Login = () => {
           <label className="label" for="email">Email</label>
           <input className="form-input" name="email" type="email" placeholder="Your eamil..." required />
         </fieldset>
-        <InputPassword/>
+        <InputPassword check="security" passwordHint={SecurityLevel}/>
         <div className="button-field">
           <button className="login-btn primary" type="submit">Login</button>
         </div>
