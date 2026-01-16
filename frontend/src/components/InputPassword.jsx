@@ -9,10 +9,10 @@ passwordHint}) => {
   
   const [showPassword, setShowPassword] = useState(false)
   
-  const [passLevel, setPassLevel] = useState("")
+  const [hint, setHint] = useState("")
   
   const checkSecurityLevel = () => {
-    setPassLevel(prev => passwordHint(inputValue))
+    setHint(prev => passwordHint(inputValue))
   }
   
   const handleInputVal = (event) => {
@@ -36,9 +36,7 @@ passwordHint}) => {
       onChange={handleInputVal} name={label} placeholder={placeholder} required/>
       <button className={"toggle-password-btn " + (showPassword ? "show-password" : "")} type="button"
       onClick={togglePassword}></button>
-      <div className="password-hint">
-        {inputValue.length > 0 && (<p>Security Level: {passLevel} </p>)}
-      </div>
+      {hint}
     </fieldset>
   )
 }

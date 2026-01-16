@@ -1,32 +1,45 @@
 import { useState } from "react"
 
 export const SecurityLevel = (inputValue) => {
-  const haveSpecialChar = () => {
-    const especialChars = ["@", "!", "#", "$", "%", "&", "˜", "€", "|",
-    "¬","(",")","=","?","¿","+", "*","/", "-","_",":",".",";",",","<",">"]
-  }
-  
-  const haveUpperCase = () => {
-    for (let char of inputValue){
-      if (char !== undefined){
-        if (char === char.toUpperCase()){
-          return true
-        }
-      }
-    }
+  const hasUpper = () => {
+    const upper = /[A-Z]/;
     
-    return false
+    return (upper.test(inputValue));
   }
   
-  let level = ""
-  
-  if (inputValue.length > 0 && inputValue.length <= 5 || !haveUpperCase()){
-    level = "Low"
-  } else if (inputValue.length > 5 && inputValue.length <= 10 && haveUpperCase()) {
-    level = "Medium"
-  } else if (inputValue.length > 10 && haveUpperCase()){
-    level = "Hard"
+  const hasNumber = () => {
+    const numbers = /[0-9]/;
+    
+    return (numbers.test(inputValue));
   }
   
-  return <p className={level}>{level}</p>
+  const hasSymbol = () => {
+    const symbols = /[!@#€%^&*()_+$£¥]/;
+    
+    return (symbols.test(inputValue));
+  }
+  
+  let size = inputValue.length;
+  
+  let level = "";
+  
+  if (size <= 8 || ( (size > 8) && ( !(hasUpper()) && !(hasNumber())
+  && !(hasSymbol()) ) ) )  {
+    level = "Low";
+  } else if ( ((size > 8 && size < 12) && (hasUpper() || hasNumber() ||
+  hasSymbol() ) ) || ( (size >= 12) && ( (hasUpper() || hasNumber()) && !(hasSymbol()) ) ) ) {
+    level = "Medium";
+  } else if ( (size >= 12) && (hasUpper() && hasNumber() && hasSymbol())){
+    level = "Hard";
+  }
+  
+  return (
+    <div className="password-hint">
+        {inputValue.length > 0 && (
+        <span>
+          <p>Security Level: <label
+        className={level}>{level}</label></p> 
+        </span>)}
+   </div>
+  )
 }
