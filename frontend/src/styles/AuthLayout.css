@@ -1,0 +1,21 @@
+.auth-layout {
+  z-index: 0;
+  width: 95%;
+  height: auto;
+  padding: 2em;
+  background: var(--section-color);
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: center;
+  place-items: center;
+  gap: 3em;
+}
+
+.layout-heading {
+  width: 100%;
+  color: var(--primary-color);
+  font-size: 18px;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+}
