@@ -1,0 +1,34 @@
+
+.auth-layout {
+  z-index: 0;
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100vh;
+  padding: 2em;
+  background: var(--section-color);
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: start;
+  place-items: center;
+  gap: 2em;
+}
+
+.layout-heading {
+  width: 100%;
+  padding: 2em;
+  color: var(--primary-color);
+  font-size: 18px;
+  place-content: center;
+  place-items: center;
+  text-align: center;
+}
+
+.label-link {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.link {
+  text-decoration: none;
+}

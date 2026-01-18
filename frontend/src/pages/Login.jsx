@@ -1,29 +1,73 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import "../styles/Login.css"
-import InputPassword from "../components/InputPassword.jsx"
+import AuthLayout from "../components/auth/AuthLayout.jsx"
+import InputField from "../components//auth/InputField.jsx"
+import PasswordInput from "../components/auth/PasswordInput.jsx"
+import AuthButton from "../components/auth/AuthButton.jsx"
+import FormError from "../components/auth/FormError.jsx"
 import { Link } from "react-router-dom"
-import { SecurityLevel } from "../hooks/PasswordHint.jsx"
 
 const Login = () => {
+  const [submited, setSubmited] = useState(false);
+  
+  const [mailVal, setMailVal] = useState("");
+  const [passwordVal, setPasswordVal] = useState("");
+  
+  const [authError, setAuthError] = useState("");
+  
+  const handleMailVal = (value) => {
+    setMailVal(prev => value.trim());
+  }
+  
+  const handlePasswordVal = (value) => {
+    setPasswordVal(prev => value.trim());
+  }
+  
+  let validMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mailVal);
+  
+  let validPassword = passwordVal.length > 0;
+  
+  let loginAuth = validMail && validPassword;
+  
+  const authSubmit = () => {
+    setSubmited(prev => true);
+  }
+  
+  
   return (
-    <main className="main-login">
-      <form className="login-form">
-        <div className="form-header">
-          <h2>Log in</h2>
-        </div>
-        <fieldset className="field">
-          <label className="label" for="email">Email</label>
-          <input className="form-input" name="email" type="email" placeholder="Your eamil..." required />
-        </fieldset>
-        <InputPassword check="security" passwordHint={SecurityLevel}/>
-        <div className="button-field">
-          <button className="login-btn primary" type="submit">Login</button>
-        </div>
-        <div className="other-options">
-          <p>Don't have an account? <Link className="form-link" to="/signup">Join us</Link></p>
-          <p>Forgot your password? <Link className="form-link">Recover.</Link></p>
-        </div>
-      </form> 
+    <main>
+      <AuthLayout title="Wellcome back">
+        <InputField 
+          label="Email" 
+          type="email" 
+          value={mailVal}
+          placeholder="Your email..." 
+          required={true}
+          isValid={validMail}
+          handleValue={handleMailVal}
+          showError={submited}
+          errorMessage={"Write a valid email"}
+        />
+        
+        <PasswordInput
+          value={passwordVal}
+          handleValue={handlePasswordVal}
+          isValid={validPassword}
+          showError={submited}
+          errorMessage={"Password field empty"}
+        />
+        
+        <AuthButton 
+          onSubmit={loginAuth}
+          handleAuth={authSubmit}
+        >
+          Login
+        </AuthButton>
+
+        
+        <label className="label-link">Don't have an account <Link to="/signup"
+        className="link">Join us</Link></label>
+      </AuthLayout>
     </main>
   )
 }
