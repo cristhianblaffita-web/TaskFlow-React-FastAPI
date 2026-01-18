@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 300px;
   height: 3em;
+  margin: .5em 0;
   border: 0;
   display: flex;
   flex-flow: column nowrap;
@@ -27,10 +28,21 @@
   width: 100%;
   height: inherit;
   padding-left: 10px;
-  border: 2px solid var(--light-color);
+  border: 2.5px solid var(--light-color);
   border-radius: 5px;
 }
 
 .input-field:hover, .input-field:focus {
   outline-color: var(--primary-color);
+}
+
+.valid-field, .valid-field.voer, .valid-field:focus {
+  border-color: #9c8f00;
+  outline-color: #9c8f00;
+}
+
+
+.not-valid-field, .not-valid-field:focus {
+  border-color: red;
+  outline-color: red;
 }

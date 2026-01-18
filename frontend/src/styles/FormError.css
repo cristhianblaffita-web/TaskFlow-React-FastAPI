@@ -2,11 +2,15 @@
   position: absolute;
   top: 100%;
   left: 0;
-  width: 100%;
+  text-align: left;
+  padding: .1em 1.5em;
+  width: inherit;
   color: red;
   font-weight: bold;
   font-size: 13px;
-  text-align: right;
-  padding-right: 15px;
-  visibility: hidden;
+  visibility: visible;
+}
+
+.on-error {
+  visibility: visible;
 }

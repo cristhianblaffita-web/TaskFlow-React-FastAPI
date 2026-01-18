@@ -1,21 +1,32 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../../styles/InputField.css"
 import FormError from "./FormError.jsx"
 
-const InputField = ({label, type="text", placeholder, required=false,
-rightButton}) => {
-  
-  const [inputVal, setInputVal] = useState("");
-  
-  const handleInputVal = (e) => {
-    setInputVal(prev => e.target.value);
+const InputField = (
+  {
+    label, 
+    type="text", 
+    value,
+    placeholder, 
+    required=false,
+    rightButton,
+    handleValue,
+    isValid,
+    showError,
+    errorMessage
   }
+) => {
   
   const requiredInput = (
     <input 
-      className="input-field" 
-      value={inputVal}
-      onChange={handleInputVal}
+      className={
+        "input-field " + (
+          isValid ? "valid-field" : (
+            showError ? "not-valid-field" : ""
+          )
+        )}
+      value={value}
+      onChange={(e) => handleValue(e.target.value)}
       type={type}
       placeholder={placeholder} 
       required
@@ -24,9 +35,9 @@ rightButton}) => {
   
   const notRequiredInput = (
     <input 
-      className="input-field" 
-      value={inputVal}
-      onChange={handleInputVal}
+      className={"input-field " + (isValid ? "valid-field" : "")} 
+      value={value}
+      onChange={(e) => handleMailVal(e.target.value)}
       type={type}
       placeholder={placeholder}
     />
@@ -37,7 +48,9 @@ rightButton}) => {
       <label className="field-label">{label}</label>
       {required ? requiredInput : notRequiredInput}
       {rightButton ? rightButton : false}
-      <FormError></FormError>
+      {showError && !isValid ? (
+        <FormError>{errorMessage}</FormError>
+      ) : false}
     </fieldset>
   )
 }

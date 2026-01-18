@@ -1,9 +1,16 @@
 import React from "react"
 import "../../styles/FormError.css"
 
-const FormError = ({children}) => {
+const FormError = (
+  {
+    children,
+  }
+  ) => {
+    
   return (
-    <label className="form-error">{children}</label>
+    <label className="form-error">
+      {children}
+    </label>
   )
 }
 

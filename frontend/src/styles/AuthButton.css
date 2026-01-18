@@ -1,17 +1,38 @@
 .auth-button {
+  position: relative;
   width: 100%;
   max-width: 300px;
+  min-height: 3em;
   height: 3em;
+  margin: .5em 0;
   border: 0;
   border-radius: 5px;
   background: var(--primary-gradient);
   color: #eee;
   font-weight: bold;
   font-size: 16px;
-  transition: transform .5s ease, box-shadow .1s ease;
+  transition: all .5s ease;
 }
 
 .auth-button:hover {
   transform: scale(1.05);
   box-shadow: 0 0 8px rgba(0,0,0,.3);
+}
+
+.disabled:hover {
+  pointer: cursor;
+  transform: scale(1);
+  box-shadow: 0 0 0 ;
+}
+
+.disabled:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff6a;
+  border-radius: 5px;
+  transition: all .5s ease;
 }
