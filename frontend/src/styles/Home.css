@@ -62,6 +62,11 @@ main {
   color: #eee;
 }
 
+.sign-link {
+  color: #eee;
+  text-decoration: none;
+}
+
 .secondary {
   background: inherit;
   color: var(--light-color);

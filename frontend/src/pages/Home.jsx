@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "../styles/Home.css"
-import { useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 
 const Home = () => {
   const [effect, setEffect] = useState("");
@@ -19,7 +19,7 @@ const Home = () => {
           forma clara, rápida y sin fricción.
         </p>
         <div className="hero-actions" >
-          <button className="primary">Get Started</button>
+          <button className="primary"><Link className="sign-link" to="/signup">Get started</Link></button>
           <button className="secondary">Learn More</button>
         </div>
       </section>
@@ -73,7 +73,7 @@ const Home = () => {
       
       <section className={"cta home-section " + effect}>
         <h2>Comienza a organizar tus ideas</h2>
-        <button className="primary">Create free account</button>
+        <button className="primary"><Link className="sign-link" to="/signup">Create free account</Link></button>
       </section>
     </main>
   )
