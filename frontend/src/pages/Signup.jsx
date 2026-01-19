@@ -1,5 +1,6 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../styles/Signup.css"
+import { Link } from "react-router-dom"
 import AuthLayout from "../components/auth/AuthLayout.jsx"
 import InputField from "../components/auth/InputField.jsx"
 import PasswordInput from "../components/auth/PasswordInput.jsx"
@@ -14,7 +15,7 @@ const Signup = () => {
   const [passwordVal, setPasswordVal] = useState("")
   const [confirmPasswordVal, setConfirmPasswordVal] = useState("")
   
-  const [securityLevel, setSecurityLevel] = useState("")
+  const [termsVal, setTermsVal] = useState(false);
   
   const handleEmailVal = (value) => {
     setEmailVal(prev => value);
@@ -28,21 +29,63 @@ const Signup = () => {
     setConfirmPasswordVal(prev => value);
   }
   
+  const handleTermsVal = (e) => {
+    setTermsVal(prev => e.target.checked);
+  }
+  
+  let level;
+  
+  const handleSecurityLevel = () => {
+    const haveUpperCase = () => {
+      return /[A-Z]/.test(passwordVal);
+    }
+    
+    const haveNumber = () => {
+      return /[0-9]/.test(passwordVal);
+    }
+    
+    const haveSymbol = () => {
+      return /[@#$%&*]/.test(passwordVal);
+    }
+    
+    let size = passwordVal.length;
+    
+    if ( (size < 8) || (size > 8 && !haveUpperCase() && !haveSymbol() && !haveNumber() )){
+      level = "Low";
+      return false;
+    } else if (size >= 12 && haveNumber() && haveUpperCase() && haveSymbol()){
+      level = "Hard";
+      return true;
+    } else if (size >= 8 && ( (haveUpperCase() || haveNumber()) && !(haveSymbol()) )
+    || ( haveSymbol && (haveUpperCase() || haveNumber())) ){
+      level = "Medium";
+      return true;
+    } 
+  }
+  
   let validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal);
   
-  
-  let validPassword = false;
+  let validPassword = handleSecurityLevel();
   
   let validConfirmPassword = ((passwordVal === confirmPasswordVal) &&
   passwordVal.length > 0);
   
-  let signupAuth = validEmail && validPassword && validConfirmPassword;
+  let canSignup = validEmail && validPassword && level !== "Low" && validConfirmPassword &&
+  termsVal;
   
-  const onSubmit = () => {
+  const signupAuth = (e) => {
+    e.preventDefault()
     if (signupAuth) {
       setIsSubmited(prev => true);
     }
   }
+  
+  useEffect(() => {
+    setIsSubmited(prev => false);
+  }, [emailVal, passwordVal, confirmPasswordVal, termsVal])
+  
+  const securityHint = <div className="security-level">Level: <p
+  className={level}>{level}</p></div>;
   
   return (
     <main>
@@ -65,6 +108,7 @@ const Signup = () => {
           handleValue={handlePasswordVal}
           errorMessage="Password is a required field"
           onSubmit={isSubmited}
+          fieldHint={securityHint}
         />
         
         <PasswordInput 
@@ -82,14 +126,32 @@ const Signup = () => {
             className="terms-checkbox"
             name="terms"
             type="checkbox"
+            value={termsVal}
+            onChange={handleTermsVal}
+            disabled={
+              canSignup && isSubmited ? true : false
+            }
           />
           <label 
-            className="terms-label"
+            className={"terms-label " + (
+                termsVal ? "terms-checked" : ""
+              )
+            }
             for="terms"
             >Do you accept Terms and Conditions?</label>
         </fieldset>
         
-        <AuthButton>Signup</AuthButton>
+        <AuthButton
+          onSubmit={canSignup}
+          handleAuth={signupAuth}
+          isLoading={isSubmited}
+        >
+          {canSignup && isSubmited ? "Creating account..." : "Signup"}
+        </AuthButton>
+        
+        <label className="label-link">
+          Do you have an account? 
+          <Link to="/login" className="link">Log in</Link></label>
       </AuthLayout>
     </main>
   )

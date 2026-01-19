@@ -46,3 +46,28 @@
   border-color: red;
   outline-color: red;
 }
+
+.security-level {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-left: 10px;
+  color: #2a2a2aaa;
+  font-weight: bold;
+  font-size: 13px;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: .5em;
+}
+
+.Low {
+  color: red;
+}
+
+.Medium {
+  color: orange;
+}
+
+.Hard {
+  color: green;
+}

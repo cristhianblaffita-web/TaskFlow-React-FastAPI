@@ -10,7 +10,8 @@ const PasswordInput = (
     handleValue,
     isValid,
     onSubmit,
-    errorMessage
+    errorMessage,
+    fieldHint
   }
   ) => {
   
@@ -44,6 +45,7 @@ const PasswordInput = (
       rightButton={toggleButton}
       onSubmit={onSubmit}
       errorMessage={errorMessage}
+      fieldHint={fieldHint}
     />
   )
 }

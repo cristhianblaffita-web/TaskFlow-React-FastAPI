@@ -13,7 +13,8 @@ const InputField = (
     handleValue,
     isValid,
     onSubmit,
-    errorMessage
+    errorMessage,
+    fieldHint
   }
 ) => {
   
@@ -52,6 +53,7 @@ const InputField = (
       {onSubmit && !isValid ? (
         <FormError>{errorMessage}</FormError>
       ) : false}
+      {fieldHint && !onSubmit && value.length > 0 ? (fieldHint) : false}
     </fieldset>
   )
 }
