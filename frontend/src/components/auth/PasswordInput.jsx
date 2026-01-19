@@ -9,7 +9,7 @@ const PasswordInput = (
     value,
     handleValue,
     isValid,
-    showError,
+    onSubmit,
     errorMessage
   }
   ) => {
@@ -42,7 +42,7 @@ const PasswordInput = (
       required={true} 
       isValid={isValid}
       rightButton={toggleButton}
-      showError={showError}
+      onSubmit={onSubmit}
       errorMessage={errorMessage}
     />
   )

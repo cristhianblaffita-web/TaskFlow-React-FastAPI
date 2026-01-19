@@ -12,7 +12,7 @@ const InputField = (
     rightButton,
     handleValue,
     isValid,
-    showError,
+    onSubmit,
     errorMessage
   }
 ) => {
@@ -22,13 +22,14 @@ const InputField = (
       className={
         "input-field " + (
           isValid ? "valid-field" : (
-            showError ? "not-valid-field" : ""
+            onSubmit ? "not-valid-field" : ""
           )
         )}
       value={value}
       onChange={(e) => handleValue(e.target.value)}
       type={type}
-      placeholder={placeholder} 
+      placeholder={placeholder}
+      disabled={isValid && onSubmit ? true : false}
       required
     />
   );
@@ -48,7 +49,7 @@ const InputField = (
       <label className="field-label">{label}</label>
       {required ? requiredInput : notRequiredInput}
       {rightButton ? rightButton : false}
-      {showError && !isValid ? (
+      {onSubmit && !isValid ? (
         <FormError>{errorMessage}</FormError>
       ) : false}
     </fieldset>

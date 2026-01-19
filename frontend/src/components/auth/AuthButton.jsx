@@ -5,7 +5,8 @@ const AuthButton = (
   {
     children, 
     handleAuth,
-    onSubmit
+    onSubmit,
+    isLoading
   }
   ) => {
   
@@ -13,14 +14,20 @@ const AuthButton = (
     <button 
       className={
         "auth-button " + (
-          onSubmit ? "" : "disabled"
+          onSubmit ? (
+            isLoading ? "loading" : ""
+          ) : "disabled"
         )
         
       } 
       type="submit"
-      disable={onSubmit ? "enable" : "disable"}
+      
       onClick={handleAuth}
     >
+      {isLoading && onSubmit ? (
+        <div className="load-spinner"></div>
+      ) : false
+      }
       {children}
     </button>  
   )

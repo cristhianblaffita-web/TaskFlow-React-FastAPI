@@ -29,14 +29,22 @@ const Login = () => {
   
   let loginAuth = validMail && validPassword;
   
-  const authSubmit = () => {
+  const authSubmit = (e) => {
+    e.preventDefault();
     setSubmited(prev => true);
   }
   
+  useEffect(() => {
+    setSubmited(prev => false)
+  }, [mailVal, passwordVal])
   
   return (
     <main>
-      <AuthLayout title="Wellcome back">
+      <AuthLayout 
+        title="Wellcome back" 
+        handleAuth={authSubmit}
+      >
+        
         <InputField 
           label="Email" 
           type="email" 
@@ -45,7 +53,7 @@ const Login = () => {
           required={true}
           isValid={validMail}
           handleValue={handleMailVal}
-          showError={submited}
+          onSubmit={submited}
           errorMessage={"Write a valid email"}
         />
         
@@ -53,15 +61,16 @@ const Login = () => {
           value={passwordVal}
           handleValue={handlePasswordVal}
           isValid={validPassword}
-          showError={submited}
+          onSubmit={submited}
           errorMessage={"Password field empty"}
         />
         
         <AuthButton 
           onSubmit={loginAuth}
           handleAuth={authSubmit}
+          isLoading={submited}
         >
-          Login
+          {loginAuth && submited ? "Logging in.." : "Login"}
         </AuthButton>
 
         
