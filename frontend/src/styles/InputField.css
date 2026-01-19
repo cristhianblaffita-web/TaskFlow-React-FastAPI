@@ -30,16 +30,20 @@
   padding-left: 10px;
   border: 2.5px solid var(--light-color);
   border-radius: 5px;
+  transition: all .3s ease;
 }
 
 .input-field:hover, .input-field:focus {
   outline-color: var(--primary-color);
 }
 
-.valid-field, .valid-field.voer, .valid-field:focus {
+.valid-field, .valid-field:hover, .valid-field:focus {
   border-color: #9c8f00;
   outline-color: #9c8f00;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
 }
+
+
 
 
 .not-valid-field, .not-valid-field:focus {
