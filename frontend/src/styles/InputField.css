@@ -40,7 +40,7 @@
 .valid-field, .valid-field:hover, .valid-field:focus {
   border-color: #9c8f00;
   outline-color: #9c8f00;
-  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  box-shadow: 0 0 8px rgba(0,255,0,.5);
 }
 
 
