@@ -89,7 +89,7 @@ const Signup = () => {
   className={level}>{level}</p></div>;
   
   return (
-    <main>
+    <main className="signup">
       <AuthLayout title="Create account">
         <InputField 
           label="Email"

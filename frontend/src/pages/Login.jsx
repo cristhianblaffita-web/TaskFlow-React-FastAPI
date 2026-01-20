@@ -40,7 +40,7 @@ const Login = () => {
   }, [mailVal, passwordVal])
   
   return (
-    <main>
+    <main className="login">
       <AuthLayout 
         title="Wellcome back" 
         handleAuth={authSubmit}

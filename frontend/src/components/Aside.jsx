@@ -22,10 +22,16 @@ const Aside = ({isOpen, toggleAside}) => {
     }
     ]
     
+    
   return (
     <>
-    <section className={"aside-container " + (isOpen ? "container-visible" :
-    "")}>
+    <section 
+    className={"aside-container " + 
+      (
+        isOpen ? "container-visible" : ""
+      )
+    }
+    >
       <aside className={"options-aside " + (isOpen ? "aside-visible" :
       "aside-hidden")}>
         <button className="hide-aside-btn" type="button" onClick={toggleAside}></button>

@@ -22,9 +22,9 @@ const InputField = (
     <input 
       className={
         "input-field " + (
-          isValid ? "valid-field" : (
+          ((isValid && onSubmit ? "disabled-field" : "") || (isValid ? "valid-field" : (
             onSubmit ? "not-valid-field" : ""
-          )
+          )))
         )}
       value={value}
       onChange={(e) => handleValue(e.target.value)}
@@ -46,7 +46,9 @@ const InputField = (
   );
   
   return (
-    <fieldset className="input-fieldset">
+    <fieldset className={"input-fieldset " + (
+      isValid && onSubmit ? "disabled-fieldset" : ""
+    )}>
       <label className="field-label">{label}</label>
       {required ? requiredInput : notRequiredInput}
       {rightButton ? rightButton : false}

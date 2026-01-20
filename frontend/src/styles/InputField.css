@@ -11,6 +11,10 @@
   place-items: center;
 }
 
+.disabled-fieldset {
+  pointer-events: none;
+}
+
 .field-label {
   position: absolute;
   left: 15px;
@@ -49,6 +53,11 @@
 .not-valid-field, .not-valid-field:focus {
   border-color: red;
   outline-color: red;
+}
+
+.disabled-field{
+  border-color: var(--light-color);
+  box-shadow: 0 0 0;
 }
 
 .security-level {
