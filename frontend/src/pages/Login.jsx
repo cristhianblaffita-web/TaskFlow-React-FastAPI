@@ -6,6 +6,7 @@ import PasswordInput from "../components/auth/PasswordInput.jsx"
 import AuthButton from "../components/auth/AuthButton.jsx"
 import FormError from "../components/auth/FormError.jsx"
 import { Link } from "react-router-dom"
+import { emailValidation } from "../hooks/useEmailValidation.js"
 
 const Login = () => {
   const [submited, setSubmited] = useState(false);
@@ -23,7 +24,7 @@ const Login = () => {
     setPasswordVal(prev => value.trim());
   }
   
-  let validMail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mailVal);
+  let validMail = emailValidation(mailVal)
   
   let validPassword = passwordVal.length > 0;
   

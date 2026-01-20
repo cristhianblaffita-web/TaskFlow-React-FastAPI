@@ -6,6 +6,7 @@ import InputField from "../components/auth/InputField.jsx"
 import PasswordInput from "../components/auth/PasswordInput.jsx"
 import AuthButton from "../components/auth/AuthButton.jsx"
 import FormError from "../components/auth/FormError.jsx"
+import { emailValidation } from "../hooks/useEmailValidation.js"
 
 
 const Signup = () => {
@@ -63,7 +64,7 @@ const Signup = () => {
     } 
   }
   
-  let validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal);
+  let validEmail = emailValidation(emailVal);
   
   let validPassword = handleSecurityLevel();
   

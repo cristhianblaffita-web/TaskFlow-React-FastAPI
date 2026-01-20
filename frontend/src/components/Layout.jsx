@@ -1,4 +1,4 @@
-import { useAside } from "../hooks/ToggleAside";
+import { useAside } from "../hooks/toggleAside";
 //import { useCurrentLocation } from "../hooks/CurrentPage.js"
 import { Outlet } from "react-router-dom"
 import NavBar from "./NavBar.jsx";
