@@ -5,7 +5,6 @@ export const useAside = () => {
   
   const toggleAside = () => {
     setIsOpen(prev => !prev);
-    
   };
   
   return {isOpen, toggleAside};
