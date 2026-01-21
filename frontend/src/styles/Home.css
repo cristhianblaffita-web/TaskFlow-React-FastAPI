@@ -6,8 +6,8 @@
   flex-flow: column nowrap;
   place-content: start;
   place-items: center;
-  padding: 100px .5em 0 .5em;
-  gap: 1em;
+  padding: 80px 0 0 0;
+  gap: 0;
   font-family: Sans-Serif;
   font-size: 16px;
 }
