@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/AuthLayout.css"
+import "../styles/AuthLayout.css"
 
 const AuthLayout = (
   {

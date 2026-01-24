@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
-import "../styles/Signup.css"
+import "./Signup.css"
 import { Link } from "react-router-dom"
-import AuthLayout from "../components/auth/AuthLayout.jsx"
-import InputField from "../components/auth/InputField.jsx"
-import PasswordInput from "../components/auth/PasswordInput.jsx"
-import AuthButton from "../components/auth/AuthButton.jsx"
-import FormError from "../components/auth/FormError.jsx"
-import { emailValidation } from "../hooks/useEmailValidation.js"
+import { AuthLayout } from "@/features/auth"
+import { InputField } from "@/features/auth"
+import { PasswordInput } from "@/features/auth"
+import { AuthButton } from "@/features/auth"
+import { FormError } from "@/features/auth"
+import { useEmailValidation } from "@/validators/useEmailValidation"
 
 
 const Signup = () => {
@@ -64,7 +64,7 @@ const Signup = () => {
     } 
   }
   
-  let validEmail = emailValidation(emailVal);
+  let validEmail = useEmailValidation(emailVal);
   
   let validPassword = handleSecurityLevel();
   

@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/AuthButton.css"
+import "../styles/AuthButton.css"
 
 const AuthButton = (
   {

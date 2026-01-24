@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import "../../styles/InputField.css"
+import "../styles/InputField.css"
 import FormError from "./FormError.jsx"
 
 const InputField = (

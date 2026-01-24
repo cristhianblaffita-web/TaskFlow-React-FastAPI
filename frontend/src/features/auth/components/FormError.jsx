@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/FormError.css"
+import "../styles/FormError.css"
 
 const FormError = (
   {

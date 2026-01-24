@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import "../styles/Home.css"
+import "./Home.css"
 import { Link, useLocation } from "react-router-dom"
 
 const Home = () => {

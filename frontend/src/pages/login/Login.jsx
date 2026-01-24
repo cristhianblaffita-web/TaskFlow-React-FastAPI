@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
-import "../styles/Login.css"
-import AuthLayout from "../components/auth/AuthLayout.jsx"
-import InputField from "../components//auth/InputField.jsx"
-import PasswordInput from "../components/auth/PasswordInput.jsx"
-import AuthButton from "../components/auth/AuthButton.jsx"
-import FormError from "../components/auth/FormError.jsx"
+import "./Login.css"
 import { Link } from "react-router-dom"
-import { emailValidation } from "../hooks/useEmailValidation.js"
+import { AuthLayout } from "@/features/auth"
+import { InputField } from "@/features/auth"
+import { PasswordInput } from "@/features/auth"
+import { AuthButton } from "@/features/auth"
+import { FormError } from "@/features/auth"
+import { useEmailValidation } from "@/validators/useEmailValidation"
 
 const Login = () => {
   const [submited, setSubmited] = useState(false);
@@ -24,7 +24,7 @@ const Login = () => {
     setPasswordVal(prev => value.trim());
   }
   
-  let validMail = emailValidation(mailVal)
+  let validMail = useEmailValidation(mailVal)
   
   let validPassword = passwordVal.length > 0;
   

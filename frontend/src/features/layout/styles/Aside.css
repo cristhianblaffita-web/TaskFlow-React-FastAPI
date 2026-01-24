@@ -107,7 +107,7 @@
   left: 20px;
   top: 30px;
   border: 0;
-  background: url("../assets/previous-icon.png");
+  background: url("@/assets/previous-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

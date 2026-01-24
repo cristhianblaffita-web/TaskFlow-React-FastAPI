@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "../../styles/PasswordInput.css"
+import "../styles/PasswordInput.css"
 import InputField from "./InputField.jsx"
 
 const PasswordInput = (

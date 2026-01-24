@@ -20,7 +20,7 @@
   min-width: 100px;
   width: 100%;
   height: 100%;
-  background: url("../assets/branch-logo.svg");
+  background: url("@/assets/branch-logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -43,7 +43,7 @@
   width: calc(var(--nav-icon) + 1em);
   height: calc(var(--nav-icon) + 1em);
   border: 0;
-  background: url("../assets/option-menu-icon.png");
+  background: url("@/assets/option-menu-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,7 +62,7 @@
   width: calc(var(--nav-icon) + .5em);
   height: calc(var(--nav-icon) + .5em);
   border: 0;
-  background: url("../assets/not-loged-user.png");
+  background: url("@/assets/not-loged-user.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
