@@ -10,6 +10,9 @@ import { About } from "@/pages"
 
 
 const App = () => {
+  const storedAuth = localStorage.getItem("auth");
+  const isLoged = storedAuth === "true";
+  
   return (
     <Routes>
       <Route path="/" element={<Layout/>}>

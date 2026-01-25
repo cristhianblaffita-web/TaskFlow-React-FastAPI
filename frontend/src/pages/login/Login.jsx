@@ -30,6 +30,7 @@ const Login = () => {
   
   let loginAuth = validMail && validPassword;
   
+  
   const authSubmit = (e) => {
     e.preventDefault();
     setSubmited(prev => true);

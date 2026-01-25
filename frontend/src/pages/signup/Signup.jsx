@@ -94,7 +94,7 @@ const Signup = () => {
         <InputField 
           label="Email"
           type="email"
-          placeholder="Your eamil..."
+          placeholder="Your email..."
           isValid={validEmail}
           value={emailVal}
           handleValue={handleEmailVal}
