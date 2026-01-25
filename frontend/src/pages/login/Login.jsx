@@ -7,6 +7,7 @@ import { PasswordInput } from "@/features/auth"
 import { AuthButton } from "@/features/auth"
 import { FormError } from "@/features/auth"
 import { useEmailValidation } from "@/validators/useEmailValidation"
+import { useAuth } from "@/hooks/useAuth"
 
 const Login = () => {
   const [submited, setSubmited] = useState(false);
@@ -30,10 +31,15 @@ const Login = () => {
   
   let loginAuth = validMail && validPassword;
   
+  const { login, user } = useAuth();
   
   const authSubmit = (e) => {
     e.preventDefault();
     setSubmited(prev => true);
+    
+    if (loginAuth) {
+      login(mailVal);
+    }
   }
   
   useEffect(() => {

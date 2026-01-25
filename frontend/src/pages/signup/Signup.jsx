@@ -7,6 +7,7 @@ import { PasswordInput } from "@/features/auth"
 import { AuthButton } from "@/features/auth"
 import { FormError } from "@/features/auth"
 import { useEmailValidation } from "@/validators/useEmailValidation"
+import { useAuth } from "@/hooks/useAuth"
 
 
 const Signup = () => {
@@ -51,6 +52,7 @@ const Signup = () => {
     
     let size = passwordVal.length;
     
+    
     if ( (size < 8) || (size > 8 && !haveUpperCase() && !haveSymbol() && !haveNumber() )){
       level = "Low";
       return false;
@@ -74,10 +76,14 @@ const Signup = () => {
   let canSignup = validEmail && validPassword && level !== "Low" && validConfirmPassword &&
   termsVal;
   
+  const { login } = useAuth();
+  
   const signupAuth = (e) => {
     e.preventDefault()
-    if (signupAuth) {
-      setIsSubmited(prev => true);
+    setIsSubmited(prev => true)
+    
+    if (canSignup) {
+      login(emailVal)
     }
   }
   
