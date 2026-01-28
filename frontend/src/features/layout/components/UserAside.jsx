@@ -9,8 +9,8 @@ const UserAside = ({isOpen, toggleAside, auth}) => {
     <>
     <div className={isOpen ? "user-aside-backdrop" : ""} onClick={toggleAside}></div>
     <aside className={"user-aside " + (isOpen ? "user-aside-visible" : "")}>
-      <button className="user-aside-btn">Taskflow</button>
-      <button className="user-aside-btn" type="button" onClick={logout}>Logout</button>
+      <button className="user-aside-btn item">Taskflow</button>
+      <button className="user-aside-btn item" type="button" onClick={logout}>Logout</button>
     </aside>
     </>
   )

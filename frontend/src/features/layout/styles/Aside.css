@@ -90,48 +90,10 @@
   overflow-y: srcoll;
 }
 
-.item {
-  position: relative;
-  height: 2em;
-  width: 60%;
-  align-content: center;
-  align-items: center;
-  transition: all .1s ease-in;
-  border-radius: 5px;
-}
 
 .option {
   text-decoration: none;
   color: #9a9a9a;
-}
-
-.item:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 5px;
-  height: 0;
-  border-radius: 5px;
-  transition: height .5s ease, top .5s ease;
-}
-
-.item:hover:before{
-  background-color: var(--primary-color);
-  height: 2em;
-  top: 0;
-}
-
-.item:hover {
-  background-color: rgba(0,0,0,.1);
-}
-
-.item:hover .option{
-  color: #2a2a2a;
-}
-
-.item .current-page {
-  color: #fff;
 }
 
 
