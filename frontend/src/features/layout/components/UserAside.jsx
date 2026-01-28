@@ -2,7 +2,7 @@ import React from "react"
 import "../styles/UserAside.css"
 import { useAuth } from "@/hooks/useAuth"
 
-const UserAside = ({isOpen, toggleAside}) => {
+const UserAside = ({isOpen, toggleAside, auth}) => {
   const { logout } = useAuth();
   
   return (

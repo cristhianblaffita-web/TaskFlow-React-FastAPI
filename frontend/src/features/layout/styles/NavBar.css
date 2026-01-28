@@ -67,3 +67,10 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+.loged-user {
+  background: url("@/assets/loged-user.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
