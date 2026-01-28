@@ -22,6 +22,7 @@ const Layout = () => {
       <Aside 
         isOpen={nav.isOpen} 
         toggleAside={nav.toggleAside}
+        auth={isAuthenticated}
       />
       
       <UserAside 

@@ -2,7 +2,7 @@ import React, {useState} from "react"
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import "../styles/Aside.css"
 
-const Aside = ({isOpen, toggleAside}) => {
+const Aside = ({isOpen, toggleAside, auth}) => {
   const options = [
     {
       path: "/",
@@ -22,6 +22,31 @@ const Aside = ({isOpen, toggleAside}) => {
     }
     ]
     
+  
+  const deployMenu = () => {
+    if (auth) {
+      const avilableOptions = options.filter((option) => option.path !==
+      "/login" && option.path !== "/signup");
+  
+      return (
+      avilableOptions.map((option, index) => (
+      <li key={index} className="item">
+              <NavLink className={( { isActive }) => isActive ? "option current-page" :
+              "option"}
+            to={option.path} end={option.path === "/"}>{option.label}</NavLink></li>  
+      ))
+    )
+    } else {
+      return (
+      options.map((option,index) => (
+        <li key={index} className="item">
+              <NavLink className={( { isActive }) => isActive ? "option current-page" :
+              "option"}
+            to={option.path} end={option.path === "/"}>{option.label}</NavLink></li>  
+      ))
+    )
+    }
+  }
     
   return (
     <>
@@ -37,13 +62,8 @@ const Aside = ({isOpen, toggleAside}) => {
         <button className="hide-aside-btn" type="button" onClick={toggleAside}></button>
         
         <ul className="options-list">
-          {options.map((option, index) => (
-            <li key={index} className="item">
-              <NavLink className={( { isActive }) => isActive ? "option current-page" :
-              "option"}
-            to={option.path} end={option.path === "/"}>{option.label}</NavLink></li>
-          ))}
-          
+          {deployMenu()}
+      
         </ul>
         </aside>
       </section>  
