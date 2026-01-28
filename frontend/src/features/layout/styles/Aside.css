@@ -25,59 +25,18 @@
   }
 }
 
-@keyframes hide-options-aside {
-  0%{
-    transform: translateX(0);
-    opacity: 1;
-  }
-  20% {
-    transform: translateX(-20%);
-    opacity: .8;
-  }
-  40% {
-    transform: translateX(-40%);
-    opacity: .6;
-  }
-  60% {
-    transform: translateX(-60%);
-    opacity: .4;
-  }
-  80% {
-    transform: translateX(-80%);
-    opacity: .2;
-  }
-  100% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-}
-
-.aside-container {
+.aside-backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
+  z-index: 109;
   width: 100vw;
   height: 100vh;
-  transition: opacity 
-  .5s ease-out, transform .5s ease-out;
-  animation-name: hide-options-aside;
-  animation-duration: 1s;
-  background: inherit;
-  transform: scale(0);
-  opacity: 0;
-  z-index: 110;
+  background: rgba(0,0,0,.4);
 }
-
-.container-visible {
-  background: rgba(0,0,0,.5);
-  animation-name: show-options-aside;
-  animation-duration: .2s;
-  transform: scale(1);
-  opacity: 1;
-}
-
 
 .options-aside {
+  position: fixed;
+  inset: 0;
   width: 70%;
   height: 100vh;
   background-color: #fff;
@@ -90,10 +49,12 @@
   pointer-events: none;
   transform: translateX(-100%);
   transition: transform .5s ease-out, opacity .2s ease-out;
-  
+  z-index: 110;
 }
 
 .aside-visible {
+  animation-name: show-options-aside;
+  animation-duration: .3s;
   opacity: 1;
   transform: translateX(0);
   pointer-events: auto;

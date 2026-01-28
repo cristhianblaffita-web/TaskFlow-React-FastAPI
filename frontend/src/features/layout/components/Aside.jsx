@@ -50,23 +50,19 @@ const Aside = ({isOpen, toggleAside, auth}) => {
     
   return (
     <>
-    <section 
-    className={"aside-container " + 
-      (
-        isOpen ? "container-visible" : ""
-      )
-    }
-    >
+      <div 
+        className={isOpen ? "aside-backdrop" : ""}
+        onClick={toggleAside}
+      ></div>
       <aside className={"options-aside " + (isOpen ? "aside-visible" :
-      "aside-hidden")}>
+      "")}>
         <button className="hide-aside-btn" type="button" onClick={toggleAside}></button>
         
         <ul className="options-list">
           {deployMenu()}
       
         </ul>
-        </aside>
-      </section>  
+      </aside>
     </>
   )
 }

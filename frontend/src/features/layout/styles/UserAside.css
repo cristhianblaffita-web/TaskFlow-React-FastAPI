@@ -2,10 +2,10 @@
   position: fixed;
   top: 75px;
   right: 10px;
-  width: 0;
-  height: 0;
-  pointer-events: none;
   visibility: hidden;
+  width: 150px;
+  height: 200px;
+  pointer-events: none;
   z-index: 110;
   display: flex;
   flex-flow: column nowrap;
@@ -14,7 +14,7 @@
   gap: 1rem;
   background: #fff;
   box-shadow: var(--main-shadow);
-  transition: all .3s ease;
+  i
 }
 
 .user-aside-btn {
@@ -29,8 +29,6 @@
 }
 
 .user-aside-visible {
-  width: 150px;
-  height: 200px;
   visibility: visible;
   pointer-events: auto;
 }
