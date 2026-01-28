@@ -28,6 +28,8 @@ export const AuthProvider = ({ children }) => {
     setUser(null)
     
     setIsAuthenticated(false)
+    
+    alert("Sesion "+ user + " closed");
   }
   
   return (
