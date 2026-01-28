@@ -30,7 +30,7 @@ const Aside = ({isOpen, toggleAside, auth}) => {
   
       return (
       avilableOptions.map((option, index) => (
-      <li key={index} className="item">
+      <li key={index} className="item" onClick={toggleAside}>
               <NavLink className={( { isActive }) => isActive ? "option current-page" :
               "option"}
             to={option.path} end={option.path === "/"}>{option.label}</NavLink></li>  
@@ -39,7 +39,7 @@ const Aside = ({isOpen, toggleAside, auth}) => {
     } else {
       return (
       options.map((option,index) => (
-        <li key={index} className="item">
+        <li key={index} className="item" onClick={toggleAside}>
               <NavLink className={( { isActive }) => isActive ? "option current-page" :
               "option"}
             to={option.path} end={option.path === "/"}>{option.label}</NavLink></li>  
