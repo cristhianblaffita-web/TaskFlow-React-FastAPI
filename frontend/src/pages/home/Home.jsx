@@ -19,8 +19,8 @@ const Home = () => {
           forma clara, rápida y sin fricción.
         </p>
         <div className="hero-actions" >
-          <button className="primary"><Link className="sign-link" to="/signup">Get started</Link></button>
-          <button className="secondary">Learn More</button>
+          <Link className="primary sign-link" to="/signup">Get started</Link>
+          <Link className="secondary">Learn More</Link>
         </div>
       </section>
       
@@ -73,7 +73,7 @@ const Home = () => {
       
       <section className={"cta home-section " + effect}>
         <h2>Comienza a organizar tus ideas</h2>
-        <button className="primary"><Link className="sign-link" to="/signup">Create free account</Link></button>
+        <Link className="primary sign-link" to="/signup">Create free account</Link>
       </section>
     </main>
   )
