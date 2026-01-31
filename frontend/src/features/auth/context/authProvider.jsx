@@ -4,14 +4,11 @@ import { AuthContext } from "./authContext"
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
   
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
-  
   useEffect(() => {
     const storedUser = localStorage.getItem("auth_user")
     
     if (storedUser) {
       setUser(JSON.parse(storedUser))
-      setIsAuthenticated(true)
     }
   }, [])
   
@@ -19,7 +16,6 @@ export const AuthProvider = ({ children }) => {
     localStorage.setItem("auth_user", JSON.stringify(userData))
     
     setUser(userData)
-    setIsAuthenticated(true)
   }
   
   const logout = () => {
@@ -27,10 +23,10 @@ export const AuthProvider = ({ children }) => {
     
     setUser(null)
     
-    setIsAuthenticated(false)
-    
     alert("Sesion "+ user + " closed");
   }
+  
+  const isAuthenticated = Boolean(user)
   
   return (
     <AuthContext.Provider
