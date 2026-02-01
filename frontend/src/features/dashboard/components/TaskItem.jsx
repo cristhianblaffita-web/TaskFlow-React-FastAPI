@@ -10,7 +10,6 @@ const TaskItem = (
   
   return ( 
     <div className="task-item">
-      <div className="task-body">
         <input
          className="check-task-button"
          type="checkbox"
@@ -27,9 +26,9 @@ const TaskItem = (
           type="button"
           onClick={undefined}
         >
-          X
+          <div className="remove-task-icon"></div>
         </button>
-      </div>
+
     </div>
   )
 }
