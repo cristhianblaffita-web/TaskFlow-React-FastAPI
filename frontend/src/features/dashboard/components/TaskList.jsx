@@ -3,13 +3,13 @@ import "../styles/TaskList.css"
 
 const TaskList = () => {
   
-  return {
+  return ( 
     <div className="tasklist-container">
       <ul className="tasklits">
         
       </ul>
     </div>
-  }
+  )
 }
 
 export default TaskList

@@ -7,6 +7,7 @@ import { Home } from "@/pages"
 import { Login } from "@/pages"
 import { Signup } from "@/pages"
 import { About } from "@/pages"
+import { Dashboard } from "@/pages"
 import { useAuth } from "@/hooks/useAuth"
 import { ProtectedRoute } from "./routes/ProtectedRoute"
 
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/signup" element={<Signup/>} />
         </Route>
         <Route path="/about" element={<About/>} />
+        <Route path="/dashboard" element={<Dashboard/>} />
       </Route>
     </Routes>
   )

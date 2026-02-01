@@ -32,4 +32,4 @@ const TaskForm = () => {
   )
 }
 
-export default Taskform
+export default TaskForm
