@@ -5,7 +5,7 @@ const TaskItem = () => {
   
   const [checkState, setCheckState] = useState(false)
   
-  return {
+  return ( 
     <div className="task-item">
       <input
        className="check-task-button"
@@ -26,7 +26,7 @@ const TaskItem = () => {
         X
       </button>
     </div>
-  }
+  )
 }
 
 export default TaskItem
