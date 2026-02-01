@@ -1,6 +1,10 @@
 .dashboard {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  margin-top: 85px;
   width: 100vw;
   height: 100vh;
-  place-content: center;
+  place-content: start;
   place-items: center;
 }
