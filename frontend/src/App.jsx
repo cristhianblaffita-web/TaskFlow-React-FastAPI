@@ -10,6 +10,8 @@ import { About } from "@/pages"
 import { Dashboard } from "@/pages"
 import { useAuth } from "@/hooks/useAuth"
 import { ProtectedRoute } from "./routes/ProtectedRoute"
+import { PrivateRoute } from "./routes/PrivateRoute"
+
 
 
 const App = () => {
@@ -22,14 +24,21 @@ const App = () => {
         <Route index element={<Home/>} />
         <Route 
           element={<ProtectedRoute 
-          isAuth={isAuthenticated}
-          redirectTo="/dashboard"
-        />}>
+              isAuth={isAuthenticated}
+              redirectTo="/dashboard"
+            />
+          }>
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
         </Route>
         <Route path="/about" element={<About/>} />
-        <Route path="/dashboard" element={<Dashboard/>} />
+        <Route 
+          element={<PrivateRoute 
+            isAuth={isAuthenticated}
+          />
+        }>
+          <Route path="/dashboard" element={<Dashboard/>} />
+        </Route>
       </Route>
     </Routes>
   )
