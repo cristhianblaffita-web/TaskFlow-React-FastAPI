@@ -6,10 +6,10 @@ const TaskList = ({taskItems=[]}) => {
   
   return ( 
     <div className="tasklist-container">
-      <ul className="tasklits">
+      <ul className="tasklist">
         {taskItems.length > 0 ? taskItems.map((task, id) => (
           <TaskItem taskContent={task.content}/>
-        )) : <p>Add some taks here...</p>}
+        )) : <p className="empty-list-msg">Add some tasks here...</p>}
       </ul>
     </div>
   )
