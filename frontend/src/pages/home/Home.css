@@ -52,9 +52,9 @@
   place-content: center;
   text-align: center;
   text-decoration: none;
+  font-weight: bolder;
   border: 0;
   border-radius: 5px;
-  font-weight: bolder;
   cursor: pointer;
   transition: box-shadow 2s ease, transform .5s ease;
 }
@@ -62,11 +62,6 @@
 .primary {
   background: var(--primary-gradient);
   color: #eee;
-}
-
-.sign-link {
-  color: #eee;
-  text-decoration: none;
 }
 
 .secondary {
