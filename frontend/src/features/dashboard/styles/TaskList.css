@@ -1,0 +1,6 @@
+.tasklist-container {
+  background: var(--section-color);
+  width: 95%;
+  min-height: 75%;
+  border-radius: 5px;
+}
