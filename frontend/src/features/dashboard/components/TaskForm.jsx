@@ -9,6 +9,13 @@ const TaskForm = (
   
   const [taskValue, setTaskValue] = useState(undefined)
   
+  const handleAddTask = () => {
+    if (taskValue.length > 0){
+      createTask(taskValue)
+      setTaskValue("")
+    }
+  }
+  
   return (
     <form 
       className="task-form"
@@ -27,7 +34,7 @@ const TaskForm = (
        <button
         className="add-task-button"
         type="button"
-        onClick={undefined}
+        onClick={handleAddTask}
        >
          <div className="add-task-icon"></div>
        </button>

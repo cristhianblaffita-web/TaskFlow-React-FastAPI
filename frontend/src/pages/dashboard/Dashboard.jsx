@@ -7,10 +7,12 @@ import { useTask } from "@/features/dashboard/hooks/useTask"
 
 const Dashboard = () => {
   
+  const { taskItems, createTask } = useTask()
+  
   return (
     <main className="dashboard">
-      <TaskForm/>
-      <TaskList/>
+      <TaskForm createTask={createTask}/>
+      <TaskList taskItems={taskItems}/>
     </main>  
   )
 }

@@ -16,7 +16,7 @@ export const useTask = () => {
       deleted: false
     };
     
-    setTasksItems(taskItems... => task);
+    setTasksItems(prev => [...prev, task]);
     
     return task;
   };
