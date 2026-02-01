@@ -14,7 +14,6 @@
   gap: 1rem;
   background: #fff;
   box-shadow: var(--main-shadow);
-  i
 }
 
 .user-aside-btn {
@@ -26,6 +25,8 @@
   font-size: 18px;
   font-weight: bolder;
   font-family: Sans-Serif;
+  text-align: center;
+  text-decoration: none;
 }
 
 .user-aside-visible {
