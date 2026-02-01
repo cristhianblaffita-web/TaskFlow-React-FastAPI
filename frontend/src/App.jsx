@@ -20,7 +20,11 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Layout/>}>
         <Route index element={<Home/>} />
-        <Route element={<ProtectedRoute isAuth={isAuthenticated}/>}>
+        <Route 
+          element={<ProtectedRoute 
+          isAuth={isAuthenticated}
+          redirectTo="/dashboard"
+        />}>
           <Route path="/login" element={<Login/>} />
           <Route path="/signup" element={<Signup/>} />
         </Route>
