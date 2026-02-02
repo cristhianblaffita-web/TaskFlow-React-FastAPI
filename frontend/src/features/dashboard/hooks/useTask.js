@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import TaskItem from "../components/TaskItem";
 
 export const useTask = () => {
   const [taskItems, setTasksItems] = useState([]);
@@ -12,15 +11,14 @@ export const useTask = () => {
     const task = {
       id: taskId,
       checked: false,
-      content: taskContent,
-      deleted: false
+      content: taskContent
     };
     
     setTasksItems(prevTasks => [...prevTasks, task]);
   };
   
   const removeTask = (selfId) => {
-    setTasksItems(prev => prev.filter((task) => task.id !== selfId))
+      setTasksItems(prev => prev.filter((task) => task.id !== selfId) )
   };
   
   return (

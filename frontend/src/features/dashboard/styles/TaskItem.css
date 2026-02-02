@@ -13,10 +13,10 @@
   place-items: center;
   justify-content: space-evenly;
   transition: transform .5s ease, box-shadow .3s ease;
+  transform: translateX(0%);
 }
 
 .task-item:hover {
-  transform: scale(1.01);
   box-shadow: var(--main-shadow);
 }
 
@@ -57,4 +57,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.removed-task {
+  opacity: .5;
+  transform: translateX(-100%) scale(.5);
+  transition: transform .3s ease, opacity 2.s ease;
 }

@@ -10,12 +10,18 @@ const TaskItem = (
   
   const [checkState, setCheckState] = useState(false)
   
+  const [isRemoved, setIsRemoved] = useState(false)
+  
   const handleRemoveTask = () => {
-    removeTask(taskId)
+    setIsRemoved(prev => true)
+    setTimeout(() => {
+      removeTask(taskId)
+    }, 300);
   }
+
   
   return ( 
-    <div className="task-item">
+    <div className={"task-item " + (isRemoved ? "removed-task" : "")}>
         <input
          className="check-task-button"
          type="checkbox"
