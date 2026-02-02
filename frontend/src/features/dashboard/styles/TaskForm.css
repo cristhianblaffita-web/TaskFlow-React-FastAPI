@@ -62,6 +62,10 @@
   transform: scale(1.01);
 }
 
+.add-task-button:active {
+  transform: scale(.9);
+}
+
 .add-task-icon {
   width: 15px;
   height: 15px;

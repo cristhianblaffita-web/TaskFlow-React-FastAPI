@@ -78,16 +78,12 @@ const Home = () => {
       
       <section className={"cta home-section " + effect}>
         <h2>Comienza a organizar tus ideas</h2>
-<<<<<<< HEAD
-        <Link className="primary sign-link" to="/signup">Create free account</Link>
-=======
         <Link 
           className="primary" 
           to="/signup"
         >
           Create free account
         </Link>
->>>>>>> 1aacec9 (fix: change home links structure)
       </section>
     </main>
   )

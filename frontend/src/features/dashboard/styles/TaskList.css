@@ -2,5 +2,26 @@
   background: var(--section-color);
   width: 95%;
   min-height: 75%;
+  max-height: 75%;
   border-radius: 5px;
+  font-family: Comic Sans MS;
+}
+
+.tasklist {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: start;
+  place-items: center;
+  overflow-y: scroll;
+  gap: .5rem;
+}
+
+.empty-list-msg {
+  position: absolute;
+  top: 50%;
+  color: var(--light-color);
 }
