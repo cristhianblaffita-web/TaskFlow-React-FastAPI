@@ -23,7 +23,7 @@ const About = () => {
       <section className="home-section">
         <h2>Sobre mí</h2>
         <p>
-          Soy Neo, un desarrollador apasionado por crear software limpio,
+          Soy Cristhian Borges, un desarrollador apasionado por crear software limpio,
           eficiente y con visión a largo plazo.
         </p>
       </section>
