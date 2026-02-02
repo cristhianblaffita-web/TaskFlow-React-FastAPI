@@ -6,19 +6,22 @@
   flex-flow: column nowrap;
   place-content: start;
   place-items: center;
-  padding: 80px 0 0 0;
-  gap: 0;
+  padding: calc(var(--nav-bar-height) + .5rem) .5rem .5rem .5rem;
+  gap: 1rem;
   font-family: Sans-Serif;
   font-size: 16px;
+  
 }
 
 .home-section {
   background-color: var(--section-color);
-  color: #222;
+  /*color: #222;*/
   box-sizing: border-box;
   width: 100%;
   height: auto;
   padding: 3em;
+  border-radius: 5px;
+  border: 1.5px solid lightgray;
   display: flex;
   flex-flow: column nowrap;
   gap: 2em;
@@ -29,6 +32,7 @@
 
 .home-section p, ul, ol{
   line-height: 1.5;
+  color: grey;
 }
 
 .hero {
