@@ -7,7 +7,7 @@ export const useTask = () => {
   const [taskId, setTaskId] = useState(0);
   
   const createTask = (taskContent) => {
-    setTaskId(prev => prev + 1);
+    setTaskId(prevId => prevId + 1);
     
     const task = {
       id: taskId,
@@ -16,15 +16,18 @@ export const useTask = () => {
       deleted: false
     };
     
-    setTasksItems(prev => [...prev, task]);
-    
-    return task;
+    setTasksItems(prevTasks => [...prevTasks, task]);
+  };
+  
+  const removeTask = (selfId) => {
+    setTasksItems(prev => prev.filter((task) => task.id !== selfId))
   };
   
   return (
     {
     taskItems,
-    createTask
+    createTask,
+    removeTask
     }
   );
 };

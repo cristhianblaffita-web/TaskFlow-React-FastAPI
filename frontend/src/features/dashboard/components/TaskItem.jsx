@@ -3,10 +3,16 @@ import "../styles/TaskItem.css"
 
 const TaskItem = (
   {
-    taskContent
+    taskContent,
+    taskId,
+    removeTask
   }) => {
   
   const [checkState, setCheckState] = useState(false)
+  
+  const handleRemoveTask = () => {
+    removeTask(taskId)
+  }
   
   return ( 
     <div className="task-item">
@@ -18,13 +24,13 @@ const TaskItem = (
         />
         
         <div className="task-content-container">
-          <p className="task-content">{taskContent}</p>
+          <p className="task-content">{taskContent} Id:{taskId}</p>
         </div>
         
         <button 
           className="remove-task-button"
           type="button"
-          onClick={undefined}
+          onClick={handleRemoveTask}
         >
           <div className="remove-task-icon"></div>
         </button>

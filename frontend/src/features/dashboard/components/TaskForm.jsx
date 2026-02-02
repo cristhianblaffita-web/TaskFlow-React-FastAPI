@@ -10,7 +10,7 @@ const TaskForm = (
   const [taskValue, setTaskValue] = useState(undefined)
   
   const handleAddTask = () => {
-    if (taskValue.length > 0){
+    if (taskValue.trim().length > 0){
       createTask(taskValue)
       setTaskValue("")
     }
