@@ -3,14 +3,9 @@ import "./Home.css"
 import { Link, useLocation } from "react-router-dom"
 
 const Home = () => {
-  const [effect, setEffect] = useState("");
-  
-  useEffect(() => {
-    setEffect(prev => "show")
-  }, []);
   return (
     <main className="home">
-      <section className={"hero home-section " + effect}>
+      <section className="hero home-section ">
         <h1>
           Deja de perder control sobre tus tareas.
         </h1>
@@ -29,7 +24,7 @@ const Home = () => {
         </div>
       </section>
       
-      <section className={"problem home-section " + effect}>
+      <section className="problem home-section">
         <h2>Gestionar tareas no debería ser complicado.</h2>
         <p>Muchas herramientas prometen productividad, pero terminan creando más
         confusión.</p>
@@ -41,13 +36,13 @@ const Home = () => {
         </ul>
       </section>
       
-      <section className={"solution home-section " + effect}>
+      <section className="solution home-section">
         <h2>Una forma más simple de trabajar.</h2>
         <p>Atlas carga con tus tareas y procesos en un solo lugar, ayudándote a
         mantener el control sin más complejidad.</p>
       </section>
       
-      <section className={"benefits home-section " + effect}>
+      <section className="benefits home-section">
         <h2>Un sistema pensado para el orden.</h2>
         <div className="benefit-cards">
           <div className="card">
@@ -67,7 +62,7 @@ const Home = () => {
         </div>
       </section>
       
-      <section className={"how-it-works home-section " + effect}>
+      <section className="how-it-works home-section">
         <h2>Empieza en minutos</h2>
         <ol>
           <li><strong>Crea</strong> tu cuenta</li>
@@ -76,7 +71,7 @@ const Home = () => {
         </ol>
       </section>
       
-      <section className={"cta home-section " + effect}>
+      <section className="cta home-section">
         <h2>Comienza a organizar tus ideas</h2>
         <Link 
           className="primary" 

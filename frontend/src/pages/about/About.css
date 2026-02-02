@@ -1,0 +1,20 @@
+.technologies ul {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  place-content: center;
+  list-style: none;
+  gap: .5rem;
+}
+
+.technologies li {
+  width: auto;
+  height: auto;
+  padding: .5rem;
+  border: 1.5px solid var(--primary-color);
+  border-radius: 20px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
