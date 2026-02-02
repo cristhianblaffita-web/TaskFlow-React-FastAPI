@@ -20,6 +20,7 @@
   background: inherit;
   border: 2px solid #ccc;
   border-radius: 5px;
+  text-decoration: none;
   display: flex;
   flex-flow: row nowrap;
   place-items: center;
@@ -95,7 +96,7 @@
 
 .completed-task {
   opacity: .5;
-  
+  text-decoration: line-through;
 }
 
 .completed-task::before {
