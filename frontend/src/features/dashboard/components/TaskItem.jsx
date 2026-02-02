@@ -5,7 +5,9 @@ const TaskItem = (
   {
     taskContent,
     taskId,
-    removeTask
+    removeTask,
+    completed,
+    completeTask
   }) => {
   
   const [checkState, setCheckState] = useState(false)
@@ -18,19 +20,25 @@ const TaskItem = (
       removeTask(taskId)
     }, 300);
   }
+  
+  const handleCompleteTask = () => {
+    completeTask(taskId)
+  }
 
   
   return ( 
-    <div className={"task-item " + (isRemoved ? "removed-task" : "")}>
+    <div className={"task-item" + (completed ? " completed-task" : "") + (isRemoved ?
+    " removed-task" : "")}>
         <input
          className="check-task-button"
          type="checkbox"
          value={checkState}
          onChange={(e) => setCheckState(prev => e.target.checked)}
+         onClick={handleCompleteTask}
         />
         
         <div className="task-content-container">
-          <p className="task-content">{taskContent} Id:{taskId}</p>
+          <p className="task-content">{taskContent}</p>
         </div>
         
         <button 

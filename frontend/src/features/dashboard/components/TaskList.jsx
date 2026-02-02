@@ -2,7 +2,12 @@ import React from "react"
 import "../styles/TaskList.css"
 import TaskItem from "./TaskItem"
 
-const TaskList = ({taskItems=[], removeTask}) => {
+const TaskList = (
+  {
+    taskItems=[], 
+    removeTask, 
+    completeTask
+  }) => {
   
   return ( 
     <div className="tasklist-container">
@@ -13,7 +18,8 @@ const TaskList = ({taskItems=[], removeTask}) => {
             taskContent={task.content} 
             taskId={task.id}
             removeTask={removeTask}
-            completed={task.checked}
+            completed={task.completed}
+            completeTask={completeTask}
           />
         )) : <p className="empty-list-msg">Add some tasks here...</p>}
       </ul>

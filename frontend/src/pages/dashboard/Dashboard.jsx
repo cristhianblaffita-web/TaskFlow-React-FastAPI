@@ -10,7 +10,8 @@ const Dashboard = () => {
   const { 
     taskItems, 
     createTask, 
-    removeTask
+    removeTask,
+    completeTask
   } = useTask()
   
   return (
@@ -20,6 +21,7 @@ const Dashboard = () => {
       <TaskList 
         taskItems={taskItems} 
         removeTask={removeTask}
+        completeTask={completeTask}
       />
     </main>  
   )

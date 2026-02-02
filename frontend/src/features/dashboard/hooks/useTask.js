@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useTask = () => {
-  const [taskItems, setTasksItems] = useState([]);
+  const [taskItems, setTaskItems] = useState([]);
   
   const [taskId, setTaskId] = useState(0);
   
@@ -10,22 +10,28 @@ export const useTask = () => {
     
     const task = {
       id: taskId,
-      checked: false,
+      completed: false,
       content: taskContent
     };
     
-    setTasksItems(prevTasks => [...prevTasks, task]);
+    setTaskItems(prevTasks => [...prevTasks, task]);
   };
   
   const removeTask = (selfId) => {
-      setTasksItems(prev => prev.filter((task) => task.id !== selfId) )
+      setTaskItems(prev => prev.filter((task) => task.id !== selfId) )
   };
+  
+  const completeTask = (selfId) => {
+    setTaskItems(prev => (prev.map(task => task.id === selfId ? {...task,
+    completed: !task.completed} : task)))
+  }
   
   return (
     {
     taskItems,
     createTask,
-    removeTask
+    removeTask,
+    completeTask
     }
   );
 };
