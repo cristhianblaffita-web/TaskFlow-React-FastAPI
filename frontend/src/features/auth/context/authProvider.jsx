@@ -22,8 +22,6 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("auth_user")
     
     setUser(null)
-    
-    alert("Sesion "+ user + " closed");
   }
   
   const isAuthenticated = Boolean(user)
