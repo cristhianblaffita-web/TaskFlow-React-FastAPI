@@ -1,20 +1,23 @@
 .user-aside {
   position: fixed;
-  top: 75px;
-  right: 10px;
-  visibility: hidden;
-  width: 150px;
-  height: 200px;
+  top: calc((var(--nav-bar-height) / 2) + var(--nav-icon) / 2);
+  right: 12vw;
+  width: 200px;
+  height: 0;
+  opacity: 0;
+  padding: 2rem;
+  border-radius: 5px 0 5px 5px;
   pointer-events: none;
-  z-index: 110;
   display: flex;
   flex-flow: column nowrap;
-  place-content: center;
+  place-content: start;
   place-items: center;
+  z-index: 110;
   gap: 1rem;
-  background: #fff;
-  box-shadow: var(--main-shadow);
+  background: #fafafa;
+  transition: height .4s ease, opacity .5s ease;
 }
+
 
 .user-aside-btn {
   border: 0;
@@ -30,7 +33,8 @@
 }
 
 .user-aside-visible {
-  visibility: visible;
+  height: 150px;
+  opacity: 1;
   pointer-events: auto;
 }
 
@@ -39,5 +43,6 @@
   height: 100vh;
   position: fixed;
   inset: 0;
+  background: rgba(0,0,0,.1);
   z-index: 109;
 }
