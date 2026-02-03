@@ -35,6 +35,7 @@ const TaskForm = (
         type="button"
         onClick={handleAddTask}
        >
+         Add
          <div className="add-task-icon"></div>
        </button>
      </div> 

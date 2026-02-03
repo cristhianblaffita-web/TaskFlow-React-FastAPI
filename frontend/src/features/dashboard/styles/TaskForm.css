@@ -48,8 +48,11 @@
   max-width: 60px;
   height: 2.5em;
   min-height: 2.5em;
+  font-weight: bold;
+  display: flex;
   place-content: center;
   place-items: center;
+  gap: .2rem;
   border: 0;
   background: var(--primary-color);
   color: #fafafa;
