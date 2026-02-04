@@ -24,10 +24,10 @@ const TaskForm = (
          <input 
            className="task-field" 
            type="text"
+           maxlength={50}
            value={taskValue}
            onChange={(e) => setTaskValue(prev => e.target.value)}
-           placeholder="Write a task here..." 
-           required 
+           placeholder="Write a task here..."
           />
        </fieldset>
        <button
