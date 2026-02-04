@@ -53,7 +53,7 @@ const Signup = () => {
     let size = passwordVal.length;
     
     
-    if ( (size < 8) || (size > 8 && !haveUpperCase() && !haveSymbol() && !haveNumber() )){
+    if ( (size < 8) || (size >= 8 && !haveUpperCase() && !haveSymbol() && !haveNumber() )){
       level = "Low";
       return false;
     } else if (size >= 12 && haveNumber() && haveUpperCase() && haveSymbol()){

@@ -1,6 +1,10 @@
 .signup {
+  position: fixed;
+  top: var(--nav-bar-height);
+  left: 0;
   width: 100vw;
   height: 100vh;
+  background: var(--section-color);
   font-family: Sans-Serif;
   font-size: 16px;
   display: flex;
