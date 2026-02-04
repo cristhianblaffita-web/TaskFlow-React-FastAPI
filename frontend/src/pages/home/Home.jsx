@@ -20,7 +20,7 @@ const Home = () => {
           >
             Get started
           </Link>
-          <Link className="secondary" to="/">Learn More</Link>
+          <Link className="secondary" to="/about">Learn More</Link>
         </div>
       </section>
       
