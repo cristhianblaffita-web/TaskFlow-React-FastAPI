@@ -32,10 +32,15 @@
   color: grey;
 }
 
+
+
 .hero {
   padding: 6em 3em;
 }
 
+.hero h1 {
+  font-size: 2.5em;
+}
 .hero-actions {
   width: 100%;
   height: 2em;
