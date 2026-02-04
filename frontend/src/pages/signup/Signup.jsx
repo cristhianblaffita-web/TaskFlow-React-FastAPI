@@ -47,21 +47,21 @@ const Signup = () => {
     }
     
     const haveSymbol = () => {
-      return /[@#$%&*]/.test(passwordVal);
+      return /[@#$%&*_<>=÷×+]/.test(passwordVal);
     }
     
     let size = passwordVal.length;
     
     
-    if ( (size < 8) || (size >= 8 && !haveUpperCase() && !haveSymbol() && !haveNumber() )){
+    if ( (size < 8) || (size >= 8 && !haveUpperCase() &&  !haveNumber() &&  !haveSymbol() )){
       level = "Low";
       return false;
-    } else if (size >= 12 && haveNumber() && haveUpperCase() && haveSymbol()){
-      level = "Hard";
-      return true;
-    } else if (size >= 8 && ( (haveUpperCase() || haveNumber()) && !(haveSymbol()) )
-    || ( haveSymbol && (haveUpperCase() || haveNumber())) ){
+    } else if (size >= 8 && ( (haveUpperCase() || haveNumber()) &&
+    !(haveSymbol()) )){
       level = "Medium";
+      return true;
+    } else if (size >= 12 && haveUpperCase()  && haveNumber()  && haveSymbol()){
+      level = "Hard";
       return true;
     } 
   }
@@ -113,7 +113,7 @@ const Signup = () => {
           isValid={validPassword}
           value={passwordVal}
           handleValue={handlePasswordVal}
-          errorMessage="Password is a required field"
+          errorMessage={passwordVal.length > 0 ? "Write a secure password" : "Password is a required field"}
           onSubmit={isSubmited}
           fieldHint={securityHint}
         />
@@ -124,7 +124,7 @@ const Signup = () => {
           isValid={validConfirmPassword}
           value={confirmPasswordVal}
           handleValue={handleConfirmPasswordVal}
-          errorMessage="Confirm password is a required field"
+          errorMessage={confirmPasswordVal.length > 0 ? "Make sure you wrote the correct password" : "Confirm password is a required field"}
           onSubmit={isSubmited}
         />
         
