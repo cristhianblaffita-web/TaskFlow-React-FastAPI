@@ -1,13 +1,13 @@
 .home {
   width: 100vw;
-  height: 100%;
-  overflow-y: scroll;
+  height: 100vh;
+  overflow-y: auto;
   display: flex;
   flex-flow: column nowrap;
   place-content: start;
   place-items: center;
-  padding: calc(var(--nav-bar-height) + .5rem) .5rem .5rem .5rem;
-  gap: 1rem;
+  padding: calc(var(--nav-bar-height) + .5em) .5em .5em .5em;
+  gap: 1em;
   font-family: Sans-Serif;
   font-size: 16px;
   

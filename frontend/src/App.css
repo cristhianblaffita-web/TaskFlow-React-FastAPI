@@ -11,7 +11,7 @@
   /* Shading */
   --main-shadow: 0 0 8px rgba(0,0,0,.2);
   
-  /* Sizes */
+  /* izes */
   --nav-bar-height: 80px;
   --nav-icon: 25px;
 }
@@ -21,6 +21,7 @@
   height: 100%;
   place-items: center;
   place-content: center;
+  
 }
 
 .item {
