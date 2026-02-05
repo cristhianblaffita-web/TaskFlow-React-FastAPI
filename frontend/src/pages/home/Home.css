@@ -119,13 +119,56 @@
 }
 
 @media (min-width: 760px) {
-  .hero {
+  .home {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: "hero hero"
+                         "problem problem"
+                         "solution solution"
+                         "benefits benefits"
+                         "how-it-works cta";
+  }
+  
+  .problem {
+    grid-area: problem;
+  }
+  
+  .solution {
+    grid-area: solution;
+  }
+  
+  .benefits {
+    grid-area: benefits;
+  }
+  
+  .how-it-works {
+    grid-area: how-it-works;
+  }
+  
+  .cta {
+    grid-area: cta;
+    height: 100%;
+    place-content: center;
+    place-items: center;
+  }
+  
+  .cta .primary {
+    max-width: 400px;
+  }
+  
+  /*hero*/
+  .hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-auto-rows: repeat(2, 1fr);
     grid-template-areas: "head head content" "head head actions";
   }
   
   .hero h1{
     grid-area: head;
+    text-align: center;
   }
   
   .hero p {
@@ -138,5 +181,10 @@
   
   .primary, .secondary {
     width: 50%;
+  }
+  
+  
+  .benefit-cards {
+    flex-flow: row nowrap;
   }
 }
