@@ -117,3 +117,26 @@
   position: relative;
   z-index: 0;
 }
+
+@media (min-width: 760px) {
+  .hero {
+    display: grid;
+    grid-template-areas: "head head content" "head head actions";
+  }
+  
+  .hero h1{
+    grid-area: head;
+  }
+  
+  .hero p {
+    grid-area: content;
+  }
+  
+  .hero-actions {
+    grid-area: actions;
+  }
+  
+  .primary, .secondary {
+    width: 50%;
+  }
+}
