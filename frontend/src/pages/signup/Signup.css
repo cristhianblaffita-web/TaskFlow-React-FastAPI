@@ -27,7 +27,67 @@
   color: #222;
 }
 
-@media (min-width: 760px) {
-  display: grid;
+@media (min-width: 760px){
+  .signup {
+    place-content: center;
+  }
+  .signup .auth-layout {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1020px) {
+  .signup .auth-layout {
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 25%);
+    grid-template-areas: 
+    "header-area header-area"
+    "email-area email-area"
+    "password-area conffirm-password-area"
+    "terms-area terms-area"
+    "auth-btn-area auth-btn-area"
+    "link-area link-area";
+    place-content: center;
+    place-items: center;
+    padding: 2em;
+  }
   
+  .signup .auth-layout > :nth-child(1) {
+    font-size: 28px;
+    width: 100%;
+    grid-area: header-area;
+
+  }
+  
+  .signup .auth-layout > :nth-child(2) {
+    grid-area: email-area;
+    max-width: 100%;
+  }
+  
+  .signup .auth-layout > :nth-child(3) {
+    grid-area: password-area;
+  }
+  
+  .signup .auth-layout > :nth-child(4) {
+    grid-area: conffirm-password-area;
+  }
+  
+  .signup .auth-layout > :nth-child(5) {
+    grid-area: terms-area;
+    max-width: 100%;
+    width: 100%;
+    align-self: start;
+  }
+  
+  .signup .auth-layout > :nth-child(6) {
+    grid-area: auth-btn-area;
+    max-width: 100%;
+  }
+  
+  .signup .auth-layout > :nth-child(7) {
+    grid-area: link-area;
+    font-size: 14px;
+  }
 }

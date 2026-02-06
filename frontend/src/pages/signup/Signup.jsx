@@ -96,8 +96,10 @@ const Signup = () => {
   
   return (
     <main className="signup">
-      <AuthLayout title="Create account">
-        <InputField 
+      <AuthLayout 
+        title="Create account"
+      >
+        <InputField
           label="Email"
           type="email"
           placeholder="Your email..."
@@ -119,6 +121,7 @@ const Signup = () => {
         />
         
         <PasswordInput 
+          id="conffirm-password-area"
           label="Confirm password"
           placeholder="Repeat your password..."
           isValid={validConfirmPassword}
@@ -156,7 +159,9 @@ const Signup = () => {
           {canSignup && isSubmited ? "Creating account..." : "Signup"}
         </AuthButton>
         
-        <label className="label-link">
+        <label 
+          className="label-link"
+        >
           Do you have an account? 
           <Link to="/login" className="link">Log in</Link></label>
       </AuthLayout>

@@ -11,6 +11,7 @@ const PasswordInput = (
     isValid,
     onSubmit,
     errorMessage,
+    fieldHint,
     fieldHint
   }
   ) => {
