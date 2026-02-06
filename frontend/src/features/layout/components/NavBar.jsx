@@ -13,9 +13,10 @@ const NavBar = ({toggleAside, toggleUserAside, auth}) => {
     <div className="options-burger">
       <button type="button" id="option-btn" onClick={toggleAside}></button>
     </div>
-      <div className="logo-container">
-        
-      </div>
+      <div 
+        className="logo-container"
+        onClick={() => navigate("/")}
+      ></div>
       <div className="user-options">
         <button 
           className= {"user-btn " + (auth ? "loged-user" : "")} 
