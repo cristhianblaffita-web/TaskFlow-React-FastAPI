@@ -38,6 +38,7 @@
 
 @media (min-width: 1020px) {
   .signup .auth-layout {
+    max-width: 1000px;
     width: 90%;
     height: auto;
     display: grid;
