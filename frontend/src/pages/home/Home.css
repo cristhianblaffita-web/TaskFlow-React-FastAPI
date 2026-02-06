@@ -118,16 +118,17 @@
   z-index: 0;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1020px) {
   .home {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, auto);
-    grid-template-areas: "hero hero"
-                         "problem problem"
-                         "solution solution"
-                         "benefits benefits"
-                         "how-it-works cta";
+    grid-template-areas: 
+      "hero hero"
+      "problem problem"
+      "solution solution"
+      "benefits benefits"
+      "how-it-works cta";
   }
   
   .problem {
