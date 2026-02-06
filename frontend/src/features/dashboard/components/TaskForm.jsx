@@ -8,7 +8,8 @@ const TaskForm = (
   
   const [taskValue, setTaskValue] = useState(undefined)
   
-  const handleAddTask = () => {
+  const handleAddTask = (e) => {
+    e.preventDefault()
     if (taskValue.trim().length > 0){
       createTask(taskValue)
       setTaskValue("")
@@ -18,6 +19,7 @@ const TaskForm = (
   return (
     <form 
       className="task-form"
+      onSubmit={handleAddTask}
     >
      <div className="form-wraper">
        <fieldset className="task-fieldset">
