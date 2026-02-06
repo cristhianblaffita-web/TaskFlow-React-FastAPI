@@ -12,3 +12,12 @@
   flex-flow: column nowrap;
   overflow-y: scroll;
 }
+
+@media (min-width: 760px){
+  .login {
+    place-content: center;
+  }
+  .login .auth-layout {
+    width: 80vw;
+  }
+}
