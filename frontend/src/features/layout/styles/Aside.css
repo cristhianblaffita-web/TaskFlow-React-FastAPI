@@ -90,3 +90,9 @@
   border-radius: 5px;
   z-index: -1;
 }
+
+@media (min-width: 760px){
+  .aside-visible {
+    max-width: 500px;
+  }
+}
