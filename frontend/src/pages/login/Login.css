@@ -1,13 +1,14 @@
 .login {
-  position: fixed;
+  position: absolute;
   top: var(--nav-bar-height);
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: var(--section-color);
   font-family: Sans-Serif;
   font-size: 16px;
   display: flex;
+  place-content: start;
+  place-items: center;
   flex-flow: column nowrap;
   overflow-y: scroll;
 }
