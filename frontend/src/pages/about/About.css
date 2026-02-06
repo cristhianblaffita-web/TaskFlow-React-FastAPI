@@ -18,3 +18,34 @@
   font-weight: bold;
 }
 
+@media (min-width: 760px) {
+  .about {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: "what-is what-is"
+                         "why-builted-it technologies"
+                         "about-me about-me";
+  }
+  
+  
+  .about .home-section {
+    height: 100%;
+  }
+  
+  .what-is {
+    grid-area: what-is;
+  }
+  
+  .why-builted-it {
+    grid-area: why-builted-it;
+  }
+  
+  .about-me {
+    grid-area: about-me;
+  }
+  
+  .technologies {
+    grid-area: technologies;
+  }
+}

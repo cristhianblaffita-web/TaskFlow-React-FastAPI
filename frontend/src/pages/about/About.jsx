@@ -4,7 +4,7 @@ import "./About.css"
 const About = () => {
   return (
     <main className="home about">
-      <section className="home-section">
+      <section className="home-section what-is">
         <h2>¿Qué es esta app?</h2>
         <p>
           Esta aplicación es un dashboard experimental enfocado en practicar
@@ -12,7 +12,7 @@ const About = () => {
         </p>
       </section>
 
-      <section className="home-section">
+      <section className="home-section why-builted-it">
         <h2>¿Por qué la construí?</h2>
         <p>
           La desarrollé como parte de mi crecimiento como programador,
@@ -20,7 +20,7 @@ const About = () => {
         </p>
       </section>
 
-      <section className="home-section">
+      <section className="home-section about-me">
         <h2>Sobre mí</h2>
         <p>
           Soy Cristhian Borges, un desarrollador apasionado por crear software limpio,
