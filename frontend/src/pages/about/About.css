@@ -18,14 +18,15 @@
   font-weight: bold;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1030px) {
   .about {
     height: 100vh;
     display: grid;
     grid-template-rows: repeat(3, auto);
-    grid-template-areas: "what-is what-is"
-                         "why-builted-it technologies"
-                         "about-me about-me";
+    grid-template-areas: 
+      "what-is what-is"
+      "why-builted-it technologies"
+      "about-me about-me";
   }
   
   
