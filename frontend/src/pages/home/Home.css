@@ -1,0 +1,191 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  place-content: start;
+  place-items: center;
+  padding: calc(var(--nav-bar-height) + .5em) .5em .5em .5em;
+  gap: 1em;
+  font-family: Sans-Serif;
+  font-size: 16px;
+  
+}
+
+.home-section {
+  background-color: var(--section-color);
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  padding: 3em;
+  border-radius: 5px;
+  border: 1.5px solid lightgray;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2em;
+  
+}
+
+.home-section p, ul, ol{
+  line-height: 1.5;
+  color: grey;
+}
+
+
+
+.hero {
+  padding: 6em 3em;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+.hero-actions {
+  width: 100%;
+  height: 2em;
+  margin-top: 1em;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  gap: 1em;
+}
+
+.primary, .secondary{
+  min-width: 100px;
+  width: 100px;
+  height: 2.5em;
+  place-content: center;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bolder;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 2s ease, transform .5s ease;
+}
+
+.primary {
+  background: var(--primary-gradient);
+  color: #eee;
+}
+
+.secondary {
+  background: inherit;
+  color: var(--light-color);
+  border: 2px solid var(--light-color);
+}
+
+.primary:hover, .secondary:hover {
+  box-shadow: var(--main-shadow);
+  transform: scale(1.05);
+}
+
+.problem ul {
+  width: 100%;
+  height: auto;
+  margin: 0 1em;
+}
+
+.benefit-cards {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  gap: .5em;
+  padding: .5em;
+  margin: 0 1em;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+  
+}
+
+.how-it-works ol {
+  width: 100%;
+  height: auto;
+  margin: 0 1em;
+}
+.cta .primary {
+  width: 100%;
+}
+
+.show {
+  transform: translateX(0);
+  position: relative;
+  z-index: 0;
+}
+
+@media (min-width: 1020px) {
+  .home {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+      "hero hero"
+      "problem problem"
+      "solution solution"
+      "benefits benefits"
+      "how-it-works cta";
+  }
+  
+  .problem {
+    grid-area: problem;
+  }
+  
+  .solution {
+    grid-area: solution;
+  }
+  
+  .benefits {
+    grid-area: benefits;
+  }
+  
+  .how-it-works {
+    grid-area: how-it-works;
+  }
+  
+  .cta {
+    grid-area: cta;
+    height: 100%;
+    place-content: center;
+    place-items: center;
+  }
+  
+  .cta .primary {
+    max-width: 400px;
+  }
+  
+  /*hero*/
+  .hero {
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: repeat(3, 32%);
+    grid-auto-rows: repeat(2, 1fr);
+    grid-template-areas: "head head content" "head head actions";
+  }
+  
+  .hero h1{
+    grid-area: head;
+    text-align: center;
+  }
+  
+  .hero p {
+    grid-area: content;
+  }
+  
+  .hero-actions {
+    grid-area: actions;
+  }
+  
+  .primary, .secondary {
+    width: 50%;
+  }
+  
+  
+  .benefit-cards {
+    flex-flow: row nowrap;
+  }
+}

@@ -1,0 +1,75 @@
+.main-navbar {
+  min-width: 100vw;
+  width: 100vw;
+  height: var(--nav-bar-height);
+  max-height: cal(var(--nav-bar-height) + 20px);
+  position: fixed;
+  inset: 0;
+  background-color: #fff;
+  box-shadow: 0px 4px 4px rgba(0,0,0,.1);
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-areas: "options logo logo user";
+  z-index: 100;
+}
+
+.logo-container {
+  grid-area: logo;
+  min-width: 100px;
+  width: 100%;
+  height: 100%;
+  background: url("@/assets/branch-logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  place-content: center;
+  place-items: center;
+  font-family: Trebuchet;
+  text-align: center;
+}
+
+.options-burger {
+  grid-area: options;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+
+#option-btn {
+  width: calc(var(--nav-icon) + 1em);
+  height: calc(var(--nav-icon) + 1em);
+  border: 0;
+  background: url("@/assets/option-menu-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.user-options {
+  grid-area: user;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+.user-btn {
+  width: calc(var(--nav-icon) + .5em);
+  height: calc(var(--nav-icon) + .5em);
+  border: 0;
+  background: url("@/assets/not-loged-user.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.loged-user {
+  background: url("@/assets/loged-user.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,0 +1,79 @@
+.auth-button {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  min-height: 3em;
+  height: 3em;
+  margin: .5em 0;
+  border: 0;
+  border-radius: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  place-content: center;
+  place-items: center;
+  gap: .5em;
+  background: var(--primary-gradient);
+  color: #eee;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 0 16px rgba(0,200,200,1);
+  transition: all .5s ease;
+}
+
+.auth-button:hover {
+  transform: scale(1.05);
+}
+
+.disabled, .loading {
+  box-shadow: 0 0 0;
+}
+
+.disabled:hover, .loading:hover {
+  pointer: cursor;
+  transform: scale(1);
+}
+
+.disabled:before, .loading:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff6a;
+  border-radius: 5px;
+  transition: all .5s ease;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(72deg);
+  }
+  40% {
+    transform: rotate(144deg);
+  }
+  60%{
+    transform: rotate(216deg);
+  }
+  80% {
+    transform: rotate(288deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.load-spinner {
+  width: 20px;
+  height: 20px;
+  border: 5px solid #ccc;
+  border-top-color: #eee;
+  border-radius: 50%;
+  transition: all .5s ease;
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
