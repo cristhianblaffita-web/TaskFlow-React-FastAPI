@@ -1,11 +1,12 @@
 .user-aside {
   position: fixed;
-  top: calc((var(--nav-bar-height) / 2) + var(--nav-icon) / 2);
+  top: 0;
   right: 12vw;
   width: 200px;
-  height: 0;
+  height: 150px;
   opacity: 0;
   padding: 2rem;
+  border: 1.5px solid #ccc;
   border-radius: 10px 0 10px 10px;
   pointer-events: none;
   display: flex;
@@ -15,7 +16,7 @@
   z-index: 110;
   gap: 1rem;
   background: #fafafa;
-  transition: height .4s ease, opacity .5s ease;
+  transition: top .3s ease, opacity .2s ease;
 }
 
 
@@ -33,8 +34,9 @@
 }
 
 .user-aside-visible {
-  height: 150px;
+  top: calc((var(--nav-bar-height) / 2) + var(--nav-icon) / 2);
   opacity: 1;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
   pointer-events: auto;
 }
 
@@ -43,6 +45,5 @@
   height: 100vh;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.4);
   z-index: 109;
 }
