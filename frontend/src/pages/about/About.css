@@ -16,6 +16,13 @@
   border-radius: 20px;
   color: var(--primary-color);
   font-weight: bold;
+  transition: background .3s ease-out, transform .2s ease;
+}
+
+.technologies li:hover {
+  background: var(--primary-color);
+  color: var(--section-color);
+  transform: scale(1.1);
 }
 
 @media (min-width: 1030px) {
